@@ -80,6 +80,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         (function ymapsInit(e) {
             var n = this,
@@ -1411,11 +1412,7 @@
 
             const fetchItems = async (url) => {
 
-                const response = await fetch(url, {
-                    headers: {
-                        'Access-Control-Allow-Origin': 'https://magnit-post.webflow.io/'
-                    }
-                })
+                const response = await fetch(url)
 
                 if (!response.ok) throw Error(response.statusText)
 
