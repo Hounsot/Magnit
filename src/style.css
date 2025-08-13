@@ -2,7 +2,8 @@
 @import './components/hero.css';
 @import './components/buttons.css';
 @import './components/footer.css';
-
+@import './components/landing.css';
+  
 @font-face {
   font-family: 'Magnit';
   src: url('/fonts/Magnit-Regular.otf');
@@ -31,6 +32,7 @@
 
   --1000: #ffffff;
   --900: #EBEBEB;
+  --300: #d9d9d9;
   --200: #8B8B8B;
   --100: #1E1E1E;
   --0: #000000;
@@ -39,6 +41,7 @@
   --black: var(--0);
   --gray: var(--100);
   --grayLight: var(--900);
+  --grayDarkButNotReally: var(--300);
   --grayDark: var(--200);
   --navButtonPadding: 20px;
   --navHeight: 110px;
@@ -148,6 +151,166 @@ a{
   justify-content: space-between;
   width: 100%;
 }
+.popup_container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: var(--grayLight);
+  gap: 40px;
+  padding: 50px var(--paddingHorizontal);
+}
+.back_button{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px;
+  color: var(--grayDark);
+  font-family: 'Magnit', sans-serif;
+}
+.chips_container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chips{
+  background-color: var(--grayDarkButNotReally);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.vacancy_points{
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.vacancy_point{
+  width: calc(50% - 20px);
+  font-size: 18px;
+}
+.vacancy_content_header{
+  width: 100%;
+  min-height: 100px;
+  cursor: pointer;
+}
+.vacancy_content{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100px;
+  width: 100%;
+  overflow-y: hidden;
+  border-bottom: 1px solid var(--grayDark);
+  transition: height 0.3s ease;
+  cursor: pointer;
+  &.first{
+    border-top: 1px solid var(--grayDark);
+  }
+  &.expanded {
+    overflow-y: visible;
+  }
+}
+/* // faq */
+.faq_question{
+  width: 100%;
+  font-size: 30px;
+  @media (max-width: 1920px) {
+    font-size: 25px;
+  }
+  @media (max-width: 1440px) {
+    font-size: 20px;
+  }
+}
+.faq_point{
+  max-width: 70%;
+  font-size: 18px;
+}
+.faq_content_header{
+  width: 100%;
+  min-height: 100px;
+  cursor: pointer;
+}
+.open_faq{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  font-size: 20px;
+  color: var(--grayDark);
+  font-family: 'Magnit', sans-serif;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transition: color 0.3s ease;
+  @media (max-width: 1920px) {
+    font-size: 18px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+  
+  svg {
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    color: var(--black);
+  }
+  
+  &.active{
+    color: var(--black);
+    
+    svg{
+      transform: rotate(180deg);
+    }
+  }
+}
+.faq_content{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100px;
+  width: 100%;
+  overflow-y: hidden;
+  border-bottom: 1px solid var(--grayDark);
+  transition: height 0.3s ease;
+  cursor: pointer;
+  &.first{
+    border-top: 1px solid var(--grayDark);
+  }
+  &.expanded {
+    overflow-y: visible;
+  }
+  
+  /* Hide FAQ items after the 4th by default */
+  &:nth-child(n+6) {
+    display: none;
+  }
+  
+  /* Show all FAQ items when parent has show-all class */
+  .show-all &:nth-child(n+6) {
+    display: flex;
+  }
+}
+.open_button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 100px;
+  border: 1px solid var(--grayDark);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.open_button.active{
+  background-color: var(--black);
+  transform: rotate(-180deg);
+}
 .align_center{
   align-items: center;
 }
@@ -162,6 +325,7 @@ a{
   font-family: 'RF Dewi', sans-serif;
   font-weight: 700;
   font-size: 50px;
+  line-height: 1;
 }
 .header2{
   font-family: 'RF Dewi', sans-serif;
@@ -193,6 +357,24 @@ a{
 }
 .text_center{
   text-align: center;
+}
+.description{
+  font-size: 20px;
+  @media (max-width: 1920px) {
+    font-size: 15px;
+  }
+}
+.formImage{
+  width: 255px;
+  height: 219px;
+  @media (max-width: 1024px) {
+    width: 158px;
+    height: 135px;
+  }
+  @media (max-width: 479px) {
+    width: 158px;
+    height: 135px;
+  }
 }
 .banner_text{
   font-size: 55px;
@@ -714,6 +896,11 @@ a{
 .ipad_column{
   @media (max-width: 1024px) {
     flex-direction: column;
+  }
+}
+.ipad_row{
+  @media (max-width: 1024px) {
+    flex-direction: row;
   }
 }
 .ipad_paddings{
