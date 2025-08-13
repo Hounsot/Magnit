@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Магнит Пост — Заявка</title>
+  <script type="module" crossorigin src="../assets/main-B503h-lF.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/main-CWuUHwMH.css">
+</head>
+
+<body>
+    <div class="Header">
+        <div class="Header_logoAndBurger">
+            <a href="/">
+                <img class="Header_logo" src="../MagnitLogo.svg" alt="Magnit Logo">
+            </a>
+            <div class="Header_burger">
+                <div class="BurgerButton_line"></div>
+                <div class="BurgerButton_line"></div>
+                <div class="BurgerButton_line"></div>
+            </div>
+        </div>
+        <div class="HeaderLinks">
+            <a href="/geography/">география</a>
+            <a href="/for-internet-shops/">интернет-магазин</a>
+            <a href="/vacancies/">вакансии</a>
+            <a href="/contacts/">контакты</a>
+        </div>
+    </div>
+
+    <section class="flex justify padding_half_vertical mobile_padding_section gap_60 ipad_column section_vertical_padding">
+        <div class="flex column gap_20 ipad_row">
+            <div class="flex column gap_14">
+                <h2 class="header">Анкета<br>соискателя</h2>
+                <p style="max-width: 300px;" class="description">Спасибо за ваш интерес к компании! Мы обязательно свяжемся с вами.
+                </p>
+            </div>
+            <img class="formImage" src="../OfferAnimationWhite.gif" alt="">
+        </div>
+        <div class="flex column gap_40 rounded_corners mobile_bottom_corners width_100 ipad_paddings">
+            <form class="form_container flex column gap_40" action="">
+                <div class="form_inputs">
+                    <div>
+                        <input type="text" placeholder="Как вас зовут?">
+                        <p class="error">Обязательное для заполнения поле</p>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Номер телефона в формате +7 (ХХХ) ХХХ ХХ ХХ">
+                        <p class="error">Неверно введён номер телефона</p>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Вакансия или интересующее направление">
+                        <p class="error">Обязательное поле</p>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Электронная почта в формате example@mail.ru">
+                        <p class="error">Электронная почта в формате example@mail.ru</p>
+                    </div>
+                </div>
+                <p class="form_legal">Нажимая кнопку «Отправить», Вы подтверждаете, что ознакомлены<br>с <a
+                        target="_blank" href="https://legal.mm.ru/#rec748026316">Политикой в отношении обработки
+                        персональных данных.</a></p>
+                <button class="CTA_2_button disabled">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="Footer">
+        <div class="justify align_center">
+            <div>
+                <p class="paragraph">Остались вопросы? Напишите нам:</p>
+                <a class="header brand" href="mailto:post@magnit.ru">post@magnit.ru</a>
+            </div>
+            <a href="#">
+                <img src="../ArrowActiveRed.svg" alt="">
+            </a>
+        </div>
+        <div class="justify align_center border_top">
+            <p class="paragraph">2024-2025 © ООО «Магнит Маркет»</p>
+            <div class="footer_links">
+                <a href="/geography/">география</a>
+                <a href="/for-internet-shops/">интернет-магазин</a>
+                <a href="/vacancies/">вакансии</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // very lightweight client-side validation UX
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('lead-form');
+            if (!form) return;
+            const showError = (name, show) => {
+                const el = form.querySelector(`.error[data-error-for="${name}"]`);
+                if (el) el.classList.toggle('active', !!show);
+            };
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let valid = true;
+                ['company', 'name', 'email', 'phone'].forEach((field) => {
+                    const input = form.elements[field];
+                    const ok = input && input.checkValidity();
+                    showError(field, !ok);
+                    if (!ok) valid = false;
+                });
+                if (!valid) return;
+                // Replace with real submit later
+                alert('Спасибо! Мы свяжемся с вами.');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+
+</html>
