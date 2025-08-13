@@ -87,7 +87,7 @@
     --paddingHorizontal: 50px;
     --heroHeight: 680px;
     --heroHeader: 40px;
-    --heroParagraph: 20px;
+    --heroParagraph: 25px;
     --accentFontSize: 50px;
     --accentDescriptionFontSize: 15px;
     --footerHeight: 292px;
@@ -98,6 +98,7 @@
     --paddingHorizontal: 20px;
     --navButtonPadding: 20px 10px;
     --heroHeader: 35px;
+    --heroParagraph: 20px;
     --footerHeight: 171px;
   }
   @media (max-width: 479px) {
@@ -186,6 +187,12 @@ a{
   gap: 40px;
   flex-direction: row;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .vacancy_point{
+      width: 100%;
+    }
+  }
 }
 .vacancy_point{
   width: calc(50% - 20px);
@@ -215,22 +222,37 @@ a{
 }
 /* // faq */
 .faq_question{
-  width: 100%;
+  width: 80%;
   font-size: 30px;
   @media (max-width: 1920px) {
     font-size: 25px;
   }
   @media (max-width: 1440px) {
+    width: 95%;
     font-size: 20px;
+  }
+  @media (max-width: 768px) {
+    width: 95%;
+    font-size: 15px;
+  }
+  @media (max-width: 479px) {
+    width: 75%;
   }
 }
 .faq_point{
   max-width: 70%;
   font-size: 18px;
+  @media (max-width: 479px) {
+    max-width: 100%;
+    font-size: 12px;
+  }
 }
 .faq_content_header{
   width: 100%;
   min-height: 100px;
+  @media (max-width: 768px) {
+    min-height: 100px;
+  }
   cursor: pointer;
 }
 .open_faq{
@@ -273,6 +295,11 @@ a{
   flex-direction: column;
   gap: 20px;
   height: 100px;
+  @media (max-width: 768px){
+    height: 100px;
+    gap: 0;
+
+  }
   width: 100%;
   overflow-y: hidden;
   border-bottom: 1px solid var(--grayDark);
@@ -306,6 +333,10 @@ a{
   border-radius: 100px;
   border: 1px solid var(--grayDark);
   transition: background-color 0.3s ease, transform 0.3s ease;
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
 }
 .open_button.active{
   background-color: var(--black);
@@ -331,6 +362,18 @@ a{
   font-family: 'RF Dewi', sans-serif;
   font-weight: 700;
   font-size: 35px;
+}
+.vacancy_header{
+  font-family: 'RF Dewi', sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  @media (max-width: 1024px) {
+    font-size: 28px;
+
+  }
+  @media (max-width: 479px) {
+    font-size: 20px;
+  }
 }
 .title_landing{
   font-family: 'RF Dewi', sans-serif;
@@ -466,6 +509,9 @@ a{
     padding-bottom: 5px;
     border-bottom: 2px solid #8b8b8b;
     font-size: 20px;
+    @media (max-width: 479px) {
+      font-size: 15px;
+    }
   }
   .error{
     display: none;
@@ -664,7 +710,7 @@ a{
     font-size: 22px;
   }
   @media (max-width: 479px) {
-    padding: 0 10px;
+    padding: 0 20px;
     font-size: 18px;
   }
 }

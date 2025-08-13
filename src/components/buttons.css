@@ -25,14 +25,51 @@
     align-items: center;
     justify-content: center;
 }
+.CTA_3_button{
+    background-color: var(--brand);
+    color: var(--white);
+    padding: 0 30px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    height: 73px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secondary{
+    background-color: var(--grayDark);
+}
 .disabled{
+    cursor: not-allowed !important;
     background-color: var(--grayDark);
     color: var(--grayLight);
 }
+@media (max-width: 1920px) {
+    .CTA_3_button{
+        font-size: 18px;
+    }
+}
+@media (max-width: 1024px) {
+    .CTA_3_button{
+        font-size: 22px;
+    }
+}
 @media (max-width: 768px) {
+    .CTA_button{
+        padding: 0 30px;
+        font-size: 20px;
+        height: 55px;
+    }
     .CTA_2_button{
         padding: 0 20px;
         font-size: 15px;
         height: 46px;
+    }
+    .CTA_3_button{
+        font-size: 18px;
+        height: 44px;
     }
 }

@@ -403,4 +403,144 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Form: validation and error handling on form/contact pages
+  const form = document.querySelector('form.form_container');
+  if (form) {
+    const submitButton = form.querySelector('.CTA_2_button');
+    const inputs = Array.from(form.querySelectorAll('.form_inputs input'));
+
+    const validatorsByType = {
+      name: (v) => v.trim().length >= 2,
+      // Accept any formatting; require 11 digits starting with 7
+      phone: (v) => {
+        const digits = (v || '').replace(/\D/g, '');
+        // Consider valid only when formatted fully: +7 (XXX) XXX XX XX => 11 digits starting with 7
+        return digits.length === 11 && digits.startsWith('7');
+      },
+      vacancy: (v) => v.trim().length >= 2,
+      email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+      // Allow unicode and simple domain like "домен.рф" or "site.ru"
+      site: (v) => /^\S+\.\S{2,}$/.test(v.trim())
+    };
+
+    // Phone mask helpers
+    const extractDigits = (value) => (value || '').replace(/\D/g, '');
+    const normalizePhoneDigits = (value) => {
+      let digits = extractDigits(value);
+      if (!digits) return '';
+      // If starts with 8 -> replace with 7; if starts with not 7/8 and length >= 10, prepend 7
+      if (digits[0] === '8') digits = '7' + digits.slice(1);
+      else if (digits[0] !== '7') digits = '7' + digits;
+      return digits.slice(0, 11);
+    };
+    const formatPhone = (value) => {
+      const d = normalizePhoneDigits(value);
+      if (!d) return '';
+      const parts = [d[1], d[2], d[3], d[4], d[5], d[6], d[7], d[8], d[9], d[10]];
+      // Build +7 (XXX) XXX XX XX progressively
+      let out = '+7';
+      if (parts[0] !== undefined) out += ' (' + parts[0];
+      if (parts[1] !== undefined) out += parts[1];
+      if (parts[2] !== undefined) out += parts[2] + ')';
+      if (parts[3] !== undefined) out += ' ' + parts[3];
+      if (parts[4] !== undefined) out += parts[4];
+      if (parts[5] !== undefined) out += parts[5];
+      if (parts[6] !== undefined) out += ' ' + parts[6];
+      if (parts[7] !== undefined) out += parts[7];
+      if (parts[8] !== undefined) out += ' ' + parts[8];
+      if (parts[9] !== undefined) out += parts[9];
+      return out;
+    };
+
+    const resolveType = (input) => {
+      const placeholder = (input.getAttribute('placeholder') || '').toLowerCase();
+      if (placeholder.includes('электронная почта')) return 'email';
+      if (placeholder.includes('номер телефона')) return 'phone';
+      if (placeholder.includes('интернет-магазин') || placeholder.includes('сайт')) return 'site';
+      if (placeholder.includes('вакансия') || placeholder.includes('интересующее направление')) return 'vacancy';
+      if (placeholder.includes('как вас зовут')) return 'name';
+      return 'text';
+    };
+
+    const isRequired = (input) => {
+      // считаем обязательными те поля, у которых есть соседний .error
+      const wrapper = input.parentElement;
+      return !!(wrapper && wrapper.querySelector('.error'));
+    };
+
+    const showError = (input, show) => {
+      const wrapper = input.parentElement;
+      const errorEl = wrapper ? wrapper.querySelector('.error') : null;
+      if (errorEl) errorEl.classList.toggle('active', !!show);
+    };
+
+    const isValueValid = (input) => {
+      const type = resolveType(input);
+      const validator = validatorsByType[type];
+      const valid = validator ? validator(input.value) : input.value.trim() !== '';
+      return !isRequired(input) ? true : valid;
+    };
+
+    const validateInput = (input) => {
+      const valid = isValueValid(input);
+      if (isRequired(input)) showError(input, !valid);
+      return valid;
+    };
+
+    const updateSubmitState = () => {
+      const requiredInputs = inputs.filter((i) => isRequired(i));
+      const allValid = requiredInputs.every((i) => isValueValid(i));
+      if (submitButton) submitButton.classList.toggle('disabled', !allValid);
+    };
+
+    inputs.forEach((input) => {
+      // Apply phone mask on input/paste
+      if (resolveType(input) === 'phone') {
+        input.setAttribute('inputmode', 'tel');
+        const applyMask = () => {
+          const formatted = formatPhone(input.value);
+          input.value = formatted;
+        };
+        input.addEventListener('input', () => {
+          applyMask();
+          // If error shown, revalidate live
+          const wrapper = input.parentElement;
+          const err = wrapper && wrapper.querySelector('.error');
+          if (err && err.classList.contains('active')) validateInput(input);
+          updateSubmitState();
+        });
+        input.addEventListener('paste', (e) => {
+          // Delay to let the paste apply, then mask
+          requestAnimationFrame(() => {
+            applyMask();
+            updateSubmitState();
+          });
+        });
+        // Initial mask if there is prefilled value
+        if (input.value) input.value = formatPhone(input.value);
+      }
+
+      input.addEventListener('blur', () => {
+        validateInput(input);
+        updateSubmitState();
+      });
+      input.addEventListener('input', () => {
+        // Если ошибка показана — переvalidate на вводе, чтобы убрать, когда исправили
+        const wrapper = input.parentElement;
+        const err = wrapper && wrapper.querySelector('.error');
+        if (err && err.classList.contains('active')) validateInput(input);
+        updateSubmitState();
+      });
+    });
+
+    form.addEventListener('submit', (e) => {
+      const requiredInputs = inputs.filter((i) => isRequired(i));
+      const allValid = requiredInputs.every((i) => validateInput(i));
+      if (!allValid) e.preventDefault();
+    });
+
+    // Initialize state on load
+    updateSubmitState();
+  }
 });
