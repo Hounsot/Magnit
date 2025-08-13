@@ -6,11 +6,11 @@
   <link rel="icon" type="image/svg+xml" href="../vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Магнит Пост — Вакансии</title>
-  <script type="module" crossorigin src="../assets/main-DmSCYIFZ.js"></script>
-  <link rel="stylesheet" crossorigin href="../assets/main-Cd0WqOPT.css">
+  <script type="module" crossorigin src="../assets/main-DJCGfTWR.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/main-C0U_8HT9.css">
 </head>
 
-<body>
+<body class="footer_padding">
   <div class="Header">
     <div class="Header_logoAndBurger">
       <a href="/">
@@ -35,18 +35,79 @@
       <h2 class="header">Вакансии</h2>
       <p class="paragraph">Вы можете выбрать вакансии из тех,<br>что представлены на сайте или заполнить анкету.</p>
     </div>
-    <div class="flex column gap_14 width_100">
-        <a class="flex align_center justify_between width_100 background_gray rounded_corners hover_background_brand row_link" href="">Менеджер по привлечению партнёров Магнит Пост <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="38px" viewBox="0 0 19 36" fill="none"><path d="M2 2L17.5081 17.5081C17.7798 17.7798 17.7798 18.2202 17.5081 18.4919L2 34" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round"></path></svg></a>
-        <a class="flex align_center justify_between width_100 background_gray rounded_corners hover_background_brand row_link" href="">Менеджер по привлечению партнёров Магнит Пост <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="38px" viewBox="0 0 19 36" fill="none"><path d="M2 2L17.5081 17.5081C17.7798 17.7798 17.7798 18.2202 17.5081 18.4919L2 34" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round"></path></svg></a>
-        <a class="flex align_center justify_between width_100 background_gray rounded_corners hover_background_brand row_link" href="">Менеджер по привлечению партнёров Магнит Пост <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="38px" viewBox="0 0 19 36" fill="none"><path d="M2 2L17.5081 17.5081C17.7798 17.7798 17.7798 18.2202 17.5081 18.4919L2 34" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round"></path></svg></a>
-    </div>
+    <div class="flex column gap_14 width_100" id="vacancies-list"></div>
   </section>
+
+  <div class="popup_container" style="display: none;">
+    <a class="back_button" href="/vacancies/"><img src="../Back.svg" alt="">Назад</a>
+    <h1>Название вакансии</h1>
+    <div class="chips_container">
+      <div class="chips">Первый Тег</div>
+      <div class="chips">Второй Тег</div>
+      <div class="chips">Третий Тег</div>
+      <div class="chips">Четвертый Тег</div>
+    </div>
+    <div class="flex column">
+      <div class="vacancy_content first">
+        <div class="flex justify_between align_center vacancy_content_header">
+          <h2 class="header2">Что мы предлагаем</h2>
+          <div class="open_button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
+              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="vacancy_points">
+          <div class="vacancy_point">Первый поинт</div>
+          <div class="vacancy_point">Второй поинт</div>
+          <div class="vacancy_point">Третий поинт</div>
+          <div class="vacancy_point">Четвертый поинт</div>
+        </div>
+      </div>
+      <div class="vacancy_content">
+        <div class="flex justify_between align_center vacancy_content_header">
+          <h2 class="header2">Что нужно делать</h2>
+          <div class="open_button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
+              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="vacancy_points">
+          <div class="vacancy_point">Первый поинт</div>
+          <div class="vacancy_point">Второй поинт</div>
+          <div class="vacancy_point">Третий поинт</div>
+          <div class="vacancy_point">Четвертый поинт</div>
+        </div>
+      </div>
+      <div class="vacancy_content">
+        <div class="flex justify_between align_center vacancy_content_header">
+          <h2 class="header2">Кого мы ищем</h2>
+          <div class="open_button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
+              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="vacancy_points">
+          <div class="vacancy_point">Первый поинт</div>
+          <div class="vacancy_point">Второй поинт</div>
+          <div class="vacancy_point">Третий поинт</div>
+          <div class="vacancy_point">Четвертый поинт</div>
+        </div>
+      </div>  
+    </div>
+    <div class="flex gap_14 mobile_column">
+      <a class="CTA_2_button" href="">Заполнить анкету</a>
+      <a class="CTA_2_button" href="">Посмотреть на hh.ru</a>
+    </div>
+  </div>
 
   <section class="footer_second_story flex align_center gap_60 background_gray width_100 mobile_align_start">
     <img src="../OfferAnimation.gif" alt="">
     <div class="flex column gap_20">
-        <p class="paragraph">Не нашли нужную вакансию?<br>Напишите нам, чтобы мы о вас узнали.</p>
-        <a class="CTA_2_button" href="/form/">Заполнить анкету</a>
+      <p class="paragraph">Не нашли нужную вакансию?<br>Напишите нам, чтобы мы о вас узнали.</p>
+      <a class="CTA_2_button" href="/form/">Заполнить анкету</a>
     </div>
   </section>
 
@@ -69,7 +130,7 @@
       </div>
     </div>
   </footer>
+
 </body>
 
 </html>
-
