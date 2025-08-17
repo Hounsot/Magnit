@@ -10,22 +10,11 @@ const firstRowInSection2 = landingGifki2Section
   : null;
 
 let scheduled = false;
-let lastActiveRow = document.querySelector(".row.active");
+let lastActiveRow = null; // Изменено: убираем автопоиск активного элемента
 let lastActiveCircle = null;
 let lastActiveGif = null;
 
-// Initialize active circle and gif based on active row
-const initialActiveRowIndex = rows.indexOf(lastActiveRow);
-if (initialActiveRowIndex !== -1) {
-  if (circles[initialActiveRowIndex]) {
-    lastActiveCircle = circles[initialActiveRowIndex];
-    lastActiveCircle.classList.add("active");
-  }
-  if (gifs[initialActiveRowIndex]) {
-    lastActiveGif = gifs[initialActiveRowIndex];
-    lastActiveGif.classList.add("active");
-  }
-}
+// Убираем блок автоинициализации (строки 17-28)
 
 function updateActiveRows() {
   scheduled = false;
