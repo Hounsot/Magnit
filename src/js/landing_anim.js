@@ -68,32 +68,23 @@ function updateActiveRows() {
 
   // Логика для мобильных экранов: переключение default/hover в box элементах
   if (window.innerWidth < 769) {
-    boxes.forEach((box) => {
+    boxes.forEach(box => {
       const boxRect = box.getBoundingClientRect();
-      const boxIntersectsCenter =
+      const boxIntersectsCenter = 
         boxRect.top <= viewportCenterY && boxRect.bottom >= viewportCenterY;
-
-      const defaultElement = box.querySelector(".default");
-      const hoverElement = box.querySelector(".hover");
-
+      
       if (boxIntersectsCenter) {
-        // Box пересекает центр - показываем hover, скрываем default
-        if (defaultElement) defaultElement.style.display = "none";
-        if (hoverElement) hoverElement.style.display = "flex";
+        // Box пересекает центр - добавляем класс для мобильного hover состояния
+        box.classList.add("mobile-hover");
       } else {
-        // Box не пересекает центр - показываем default, скрываем hover
-        if (defaultElement) defaultElement.style.display = "flex";
-        if (hoverElement) hoverElement.style.display = "none";
+        // Box не пересекает центр - убираем класс
+        box.classList.remove("mobile-hover");
       }
     });
   } else {
-    // На больших экранах возвращаем дефолтное состояние
-    boxes.forEach((box) => {
-      const defaultElement = box.querySelector(".default");
-      const hoverElement = box.querySelector(".hover");
-
-      if (defaultElement) defaultElement.style.display = "flex";
-      if (hoverElement) hoverElement.style.display = "none";
+    // На больших экранах убираем все мобильные классы
+    boxes.forEach(box => {
+      box.classList.remove("mobile-hover");
     });
   }
 
