@@ -167,10 +167,27 @@ document.addEventListener('DOMContentLoaded', () => {
           const points = splitByEmptyLines(vacancy.whatWeOffer);
           whatWeOfferPoints.innerHTML = '';
           points.forEach(point => {
+            // Create wrapper with dot and point
+            const pointWrapper = document.createElement('div');
+            pointWrapper.className = 'flex gap_14 point_wrapper';
+            
+            // Create dot
+            const dotEl = document.createElement('div');
+            dotEl.className = 'dot';
+            
+            // Create point content
             const pointEl = document.createElement('div');
             pointEl.className = 'vacancy_point';
-            pointEl.textContent = point;
-            whatWeOfferPoints.appendChild(pointEl);
+            // Convert line breaks to <br> tags and markdown-style bold to <span class="bold">
+            const htmlContent = point
+              .replace(/\*\*(.*?)\*\*/g, '<span class="bold">$1</span>') // **text** -> <span class="bold">text</span>
+              .replace(/\n/g, '<br>'); // \n -> <br>
+            pointEl.innerHTML = htmlContent;
+            
+            // Append dot and point to wrapper
+            pointWrapper.appendChild(dotEl);
+            pointWrapper.appendChild(pointEl);
+            whatWeOfferPoints.appendChild(pointWrapper);
           });
         }
         
@@ -180,10 +197,27 @@ document.addEventListener('DOMContentLoaded', () => {
           const points = splitByEmptyLines(vacancy.whatToDo);
           whatToDoPoints.innerHTML = '';
           points.forEach(point => {
+            // Create wrapper with dot and point
+            const pointWrapper = document.createElement('div');
+            pointWrapper.className = 'flex gap_14 point_wrapper';
+            
+            // Create dot
+            const dotEl = document.createElement('div');
+            dotEl.className = 'dot';
+            
+            // Create point content
             const pointEl = document.createElement('div');
             pointEl.className = 'vacancy_point';
-            pointEl.textContent = point;
-            whatToDoPoints.appendChild(pointEl);
+            // Convert line breaks to <br> tags and markdown-style bold to <span class="bold">
+            const htmlContent = point
+              .replace(/\*\*(.*?)\*\*/g, '<span class="bold">$1</span>') // **text** -> <span class="bold">text</span>
+              .replace(/\n/g, '<br>'); // \n -> <br>
+            pointEl.innerHTML = htmlContent;
+            
+            // Append dot and point to wrapper
+            pointWrapper.appendChild(dotEl);
+            pointWrapper.appendChild(pointEl);
+            whatToDoPoints.appendChild(pointWrapper);
           });
         }
         
@@ -193,10 +227,27 @@ document.addEventListener('DOMContentLoaded', () => {
           const points = splitByEmptyLines(vacancy.whoWeSeek);
           whoWeSeekPoints.innerHTML = '';
           points.forEach(point => {
+            // Create wrapper with dot and point
+            const pointWrapper = document.createElement('div');
+            pointWrapper.className = 'flex gap_14 point_wrapper';
+            
+            // Create dot
+            const dotEl = document.createElement('div');
+            dotEl.className = 'dot';
+            
+            // Create point content
             const pointEl = document.createElement('div');
             pointEl.className = 'vacancy_point';
-            pointEl.textContent = point;
-            whoWeSeekPoints.appendChild(pointEl);
+            // Convert line breaks to <br> tags and markdown-style bold to <span class="bold">
+            const htmlContent = point
+              .replace(/\*\*(.*?)\*\*/g, '<span class="bold">$1</span>') // **text** -> <span class="bold">text</span>
+              .replace(/\n/g, '<br>'); // \n -> <br>
+            pointEl.innerHTML = htmlContent;
+            
+            // Append dot and point to wrapper
+            pointWrapper.appendChild(dotEl);
+            pointWrapper.appendChild(pointEl);
+            whoWeSeekPoints.appendChild(pointWrapper);
           });
         }
       }
@@ -390,14 +441,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide extra FAQ items, show only first 4
         faqContainer.classList.remove('show-all');
         openFaqButton.classList.remove('active');
-        openFaqButton.innerHTML = `Открыть все вопросы <svg xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewBox="0 0 65 65" fill="none">
+        openFaqButton.innerHTML = `Открыть все ответы <svg xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewBox="0 0 65 65" fill="none">
           <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
         </svg>`;
       } else {
         // Show all FAQ items
         faqContainer.classList.add('show-all');
         openFaqButton.classList.add('active');
-        openFaqButton.innerHTML = `Скрыть вопросы <svg xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewBox="0 0 65 65" fill="none">
+        openFaqButton.innerHTML = `Скрыть все ответы <svg xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewBox="0 0 65 65" fill="none">
           <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
         </svg>`;
       }
@@ -463,15 +514,26 @@ document.addEventListener('DOMContentLoaded', () => {
       return 'text';
     };
 
+    const getErrorEl = (input) => {
+      const parent = input.parentElement;
+      if (!parent) return null;
+      // Предпочитаем прямого соседа после input
+      const next = input.nextElementSibling;
+      if (next && next.classList && next.classList.contains('error')) return next;
+      // Иначе ищем среди прямых детей-"соседей" в том же родителе
+      const directError = Array.from(parent.children).find(
+        (el) => el !== input && el.classList && el.classList.contains('error')
+      );
+      return directError || null;
+    };
+
     const isRequired = (input) => {
-      // считаем обязательными те поля, у которых есть соседний .error
-      const wrapper = input.parentElement;
-      return !!(wrapper && wrapper.querySelector('.error'));
+      // обязательными считаем только те поля, у которых есть ближайший сосед .error в рамках того же непосредственного родителя
+      return !!getErrorEl(input);
     };
 
     const showError = (input, show) => {
-      const wrapper = input.parentElement;
-      const errorEl = wrapper ? wrapper.querySelector('.error') : null;
+      const errorEl = getErrorEl(input);
       if (errorEl) errorEl.classList.toggle('active', !!show);
     };
 
@@ -542,5 +604,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize state on load
     updateSubmitState();
+  }
+
+  // Cookies: accept button hides the banner and persists choice
+  const cookiesSection = document.querySelector('.cookies');
+  if (cookiesSection) {
+    const acceptBtn = cookiesSection.querySelector('.accept_button:not(.secondary)');
+    // If previously accepted, hide on load
+    if (window.localStorage && localStorage.getItem('cookiesAccepted') === 'true') {
+      cookiesSection.style.display = 'none';
+    }
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+        cookiesSection.style.display = 'none';
+        try { localStorage.setItem('cookiesAccepted', 'true'); } catch (_) {}
+      });
+    }
   }
 });

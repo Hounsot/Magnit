@@ -42,9 +42,15 @@
 }
 .Header_burger.active:hover{
     background-color: var(--grayLight);
+    .BurgerButton_line{
+        background-color: var(--black);
+    }
 }
 .Header_burger.active{
     background-color: var(--brand);
+    .BurgerButton_line{
+        background-color: var(--white);
+    }
 }
 .Header_logoAndBurger{
     display: flex;

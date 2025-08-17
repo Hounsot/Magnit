@@ -11,6 +11,7 @@ export default defineConfig({
         forInternetShops: resolve(process.cwd(), 'for-internet-shops/index.html'),
         vacancies: resolve(process.cwd(), 'vacancies/index.html'),
         contacts: resolve(process.cwd(), 'contacts/index.html'),
+        form: resolve(process.cwd(), 'form/index.html'),
       },
     },
   },
