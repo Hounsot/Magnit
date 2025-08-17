@@ -9,6 +9,9 @@ const firstRowInSection2 = landingGifki2Section
   ? landingGifki2Section.querySelector(".row")
   : null;
 
+// Добавляем селектор для box элементов
+const boxes = Array.from(document.querySelectorAll(".box"));
+
 let scheduled = false;
 let lastActiveRow = null; // Изменено: убираем автопоиск активного элемента
 let lastActiveCircle = null;
@@ -20,7 +23,7 @@ let header2HasBeenActivated = false; // Флаг для отслеживания
 function updateActiveRows() {
   scheduled = false;
   const viewportCenterY = window.innerHeight / 2;
-  const edgeThreshold = 500; // Увеличиваем с 50 до 200 пикселей
+  const edgeThreshold = 400; // Увеличиваем с 50 до 200 пикселей
 
   // Pick the row intersecting center with the smallest distance to center
   let bestCandidate = null;
@@ -61,6 +64,37 @@ function updateActiveRows() {
       header2.classList.remove("active");
       header2HasBeenActivated = false;
     }
+  }
+
+  // Логика для мобильных экранов: переключение default/hover в box элементах
+  if (window.innerWidth < 769) {
+    boxes.forEach((box) => {
+      const boxRect = box.getBoundingClientRect();
+      const boxIntersectsCenter =
+        boxRect.top <= viewportCenterY && boxRect.bottom >= viewportCenterY;
+
+      const defaultElement = box.querySelector(".default");
+      const hoverElement = box.querySelector(".hover");
+
+      if (boxIntersectsCenter) {
+        // Box пересекает центр - показываем hover, скрываем default
+        if (defaultElement) defaultElement.style.display = "none";
+        if (hoverElement) hoverElement.style.display = "flex";
+      } else {
+        // Box не пересекает центр - показываем default, скрываем hover
+        if (defaultElement) defaultElement.style.display = "flex";
+        if (hoverElement) hoverElement.style.display = "none";
+      }
+    });
+  } else {
+    // На больших экранах возвращаем дефолтное состояние
+    boxes.forEach((box) => {
+      const defaultElement = box.querySelector(".default");
+      const hoverElement = box.querySelector(".hover");
+
+      if (defaultElement) defaultElement.style.display = "flex";
+      if (hoverElement) hoverElement.style.display = "none";
+    });
   }
 
   // Проверяем только текущий активный элемент на близость к краю для деактивации
