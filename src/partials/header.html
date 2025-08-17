@@ -1,0 +1,20 @@
+<div class="Header">
+  <div class="Header_logoAndBurger">
+    <a href="/">
+      <img class="Header_logo" src="/MagnitLogo.svg" alt="Magnit Logo">
+    </a>
+    <div class="Header_burger">
+      <div class="BurgerButton_line"></div>
+      <div class="BurgerButton_line"></div>
+      <div class="BurgerButton_line"></div>
+    </div>
+  </div>
+  <div class="HeaderLinks">
+    <a {{#if (eq activePage "geography")}}class="active"{{/if}} href="/geography/">география</a>
+    <a {{#if (eq activePage "for-internet-shops")}}class="active"{{/if}} href="/for-internet-shops/">интернет-магазинам</a>
+    <a {{#if (eq activePage "vacancies")}}class="active"{{/if}} href="/vacancies/">вакансии</a>
+    <a {{#if (eq activePage "contacts")}}class="active"{{/if}} href="/contacts/">контакты</a>
+  </div>
+</div>
+
+

@@ -9,24 +9,7 @@
 </head>
 
 <body class="footer_padding">
-    <div class="Header">
-        <div class="Header_logoAndBurger">
-            <a href="/">
-                <img class="Header_logo" src="/MagnitLogo.svg" alt="Magnit Logo">
-            </a>
-            <div class="Header_burger">
-                <div class="BurgerButton_line"></div>
-                <div class="BurgerButton_line"></div>
-                <div class="BurgerButton_line"></div>
-            </div>
-        </div>
-        <div class="HeaderLinks">
-            <a class="active" href="/geography/">география</a>
-            <a href="/for-internet-shops/">интернет-магазинам</a>
-            <a href="/vacancies/">вакансии</a>
-            <a href="/contacts/">контакты</a>
-        </div>
-    </div>
+    {{> header activePage="geography" }}
     <section class="background_brand flex wrap justify_center">
         <div class="width_100 flex wrap padding justify_center mobile_fit_content align_items_center mobile_column">
             <div class="accent_points">
@@ -59,25 +42,7 @@
     <section>
         <div id="map" class="map"></div>
     </section>
-    <footer class="Footer">
-        <div class="justify align_center">
-            <div>
-                <p class="paragraph">Остались вопросы? Напишите нам:</p>
-                <a class="header brand" href="mailto:post@magnit.ru">post@magnit.ru</a>
-            </div>
-            <a href="#">
-                <img src="/ArrowActiveRed.svg" alt="">
-            </a>
-        </div>
-        <div class="justify align_center border_top">
-            <p class="paragraph">2024-2025 © ООО «Магнит Маркет»</p>
-            <div class="footer_links">
-                <a href="/geography/">география</a>
-                <a href="/for-internet-shops/">интернет-магазинам</a>
-                <a href="/vacancies/">вакансии</a>
-            </div>
-        </div>
-    </footer>
+    {{> footer }}
 
     <script>
         (function ymapsInit(e) {
