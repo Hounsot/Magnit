@@ -68,11 +68,11 @@ function updateActiveRows() {
 
   // Логика для мобильных экранов: переключение default/hover в box элементах
   if (window.innerWidth < 769) {
-    boxes.forEach(box => {
+    boxes.forEach((box) => {
       const boxRect = box.getBoundingClientRect();
-      const boxIntersectsCenter = 
+      const boxIntersectsCenter =
         boxRect.top <= viewportCenterY && boxRect.bottom >= viewportCenterY;
-      
+
       if (boxIntersectsCenter) {
         // Box пересекает центр - добавляем класс для мобильного hover состояния
         box.classList.add("mobile-hover");
@@ -83,7 +83,7 @@ function updateActiveRows() {
     });
   } else {
     // На больших экранах убираем все мобильные классы
-    boxes.forEach(box => {
+    boxes.forEach((box) => {
       box.classList.remove("mobile-hover");
     });
   }
