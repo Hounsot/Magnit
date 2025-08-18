@@ -21,6 +21,8 @@ export default defineConfig({
         vacancies: resolve(process.cwd(), 'vacancies/index.html'),
         contacts: resolve(process.cwd(), 'contacts/index.html'),
         form: resolve(process.cwd(), 'form/index.html'),
+        formDone: resolve(process.cwd(), 'form-done/index.html'),
+        contactsDone: resolve(process.cwd(), 'contacts-done/index.html'),
       },
     },
   },
