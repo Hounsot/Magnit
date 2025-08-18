@@ -6,31 +6,33 @@
     <link rel="icon" type="image/svg+xml" href="../vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Магнит Пост — География</title>
-  <script type="module" crossorigin src="../assets/main-DnHymHEy.js"></script>
-  <link rel="stylesheet" crossorigin href="../assets/main-CqGxAO0B.css">
+  <script type="module" crossorigin src="../assets/main-Cltzd-fY.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/main-DaJvDPlB.css">
 </head>
 
 <body class="footer_padding">
     <div class="Header">
-        <div class="Header_logoAndBurger">
-            <a href="/">
-                <img class="Header_logo" src="../MagnitLogo.svg" alt="Magnit Logo">
-            </a>
-            <div class="Header_burger">
-                <div class="BurgerButton_line"></div>
-                <div class="BurgerButton_line"></div>
-                <div class="BurgerButton_line"></div>
-            </div>
+      <div class="Header_logoAndBurger">
+        <a href="/">
+          <img class="Header_logo" src="../MagnitLogo.svg" alt="Magnit Logo">
+        </a>
+        <div class="Header_burger">
+          <div class="BurgerButton_line"></div>
+          <div class="BurgerButton_line"></div>
+          <div class="BurgerButton_line"></div>
         </div>
-        <div class="HeaderLinks">
-            <a class="active" href="/geography/">география</a>
-            <a href="/for-internet-shops/">интернет-магазин</a>
-            <a href="/vacancies/">вакансии</a>
-            <a href="/contacts/">контакты</a>
-        </div>
+      </div>
+      <div class="HeaderLinks">
+        <a class="active" href="/geography/">география</a>
+        <a  href="/for-internet-shops/">интернет-магазинам</a>
+        <a  href="/vacancies/">вакансии</a>
+        <a  href="/contacts/">контакты</a>
+      </div>
     </div>
+    
+    
     <section class="background_brand flex wrap justify_center">
-        <div class="width_100 flex wrap padding justify_center mobile_fit_content align_items_center mobile_column">
+        <div class="width_100 flex geography_points wrap padding justify_center mobile_fit_content align_items_center mobile_column">
             <div class="accent_points">
                 <div class="flex column align_center width_25 flex_grow_1">
                     <h2 class="accent">23</h2>
@@ -62,24 +64,27 @@
         <div id="map" class="map"></div>
     </section>
     <footer class="Footer">
-        <div class="justify align_center">
-            <div>
-                <p class="paragraph">Остались вопросы? Напишите нам:</p>
-                <a class="header brand" href="mailto:post@magnit.ru">post@magnit.ru</a>
-            </div>
-            <a href="#">
-                <img src="../ArrowActiveRed.svg" alt="">
-            </a>
+      <div class="justify align_center first_footer_row">
+        <div class="footer_contacts">
+          <p class="paragraph">Остались вопросы? Напишите нам:</p>
+          <a class="header brand magnit" href="mailto:post@magnit.ru">post@magnit.ru</a>
         </div>
-        <div class="justify align_center border_top">
-            <p class="paragraph">2024-2025 © ООО «Магнит Маркет»</p>
-            <div class="footer_links">
-                <a href="/geography/">география</a>
-                <a href="/for-internet-shops/">интернет-магазин</a>
-                <a href="/vacancies/">вакансии</a>
-            </div>
+        <a class="back_to_top" href="#">
+          <img src="../ArrowActiveRed.svg" alt="">
+          Наверх
+        </a>
+      </div>
+      <div class="justify align_center border_top second_footer_row">
+        <p class="paragraph">2024-2025 © ООО «Магнит Маркет»</p>
+        <div class="footer_links">
+          <a href="/geography/">география</a>
+          <a href="/for-internet-shops/">интернет-магазинам</a>
+          <a href="/vacancies/">вакансии</a>
         </div>
+      </div>
     </footer>
+    
+    
 
     <script>
         (function ymapsInit(e) {
@@ -1171,7 +1176,7 @@
                     function r() {
                         var e = n.defer(),
                             r = document.createElement("script");
-                        return r.onload = e.resolve.bind(e), r.onerror = e.reject.bind(e), r.src = t.env.hosts.vectorIndex.replace("{{version}}", t.env.vector.version), t.env.vector.filename && (r.src = r.src.replace("vector.min.js", t.env.vector.filename)), document.head.insertAdjacentElement("afterbegin", r), e.promise()["catch"](function () {
+                        return r.onload = e.resolve.bind(e), r.onerror = e.reject.bind(e), r.src = t.env.hosts.vectorIndex.replace("", t.env.vector.version), t.env.vector.filename && (r.src = r.src.replace("vector.min.js", t.env.vector.filename)), document.head.insertAdjacentElement("afterbegin", r), e.promise()["catch"](function () {
                             return n.reject(new Error("Failed to load vector engine"))
                         })
                     }
@@ -1304,7 +1309,7 @@
             "hosts": {
                 "api": {
                     "main": "https://api-maps.yandex.ru/",
-                    "ua": "https://yandex.ru/legal/maps_termsofuse/?lang={{lang}}",
+                    "ua": "https://yandex.ru/legal/maps_termsofuse/?lang=",
                     "maps": "https://yandex.ru/maps/",
                     "statCounter": "https://yandex.ru/clck/",
                     "services": {
@@ -1341,11 +1346,11 @@
                 "trafficInfo": "https://core-jams-info.maps.yandex.net/",
                 "trafficArchive": "https://core-jams-rdr-hist.maps.yandex.net/",
                 "roadEventsRenderer": "https://core-road-events-renderer.maps.yandex.net/",
-                "vectorIndex": "https://yastatic.net/s3/mapsapi-v3/vector/{{version}}/out/vector.min.js",
-                "vectorTiles": "https://core-renderer-tiles.maps.yandex.net/vmap2/tiles?lang={{lang}}&x={{x}}&y={{y}}&z={{z}}&zmin={{zmin}}&zmax={{zmax}}&v={{version}}",
-                "vectorImages": "https://core-renderer-tiles.maps.yandex.net/vmap2/icons?id={{id}}&scale={{scale}}",
-                "vectorMeshes": "https://core-renderer-tiles.maps.yandex.net/vmap2/meshes?id={{id}}",
-                "vectorGlyphs": "https://core-renderer-tiles.maps.yandex.net/vmap2/glyphs?lang={{lang}}&font_id={{fontId}}&range={{range}}",
+                "vectorIndex": "https://yastatic.net/s3/mapsapi-v3/vector//out/vector.min.js",
+                "vectorTiles": "https://core-renderer-tiles.maps.yandex.net/vmap2/tiles?lang=&x=&y=&z=&zmin=&zmax=&v=",
+                "vectorImages": "https://core-renderer-tiles.maps.yandex.net/vmap2/icons?id=&scale=",
+                "vectorMeshes": "https://core-renderer-tiles.maps.yandex.net/vmap2/meshes?id=",
+                "vectorGlyphs": "https://core-renderer-tiles.maps.yandex.net/vmap2/glyphs?lang=&font_id=&range=",
                 "indoorTiles": "https://core-renderer-tiles.maps.yandex.net/",
                 "panoramasTiles": "https://pano.maps.yandex.net/%s/%z.%x.%y",
                 "taxiRouteInfo": "https://taxi-routeinfo.taxi.yandex.net/taxi_info?clid=yamaps&apikey=243de774-24f0-4ed8-86d7-b7261131b5f7&rll={rll}"
