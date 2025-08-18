@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Магнит Пост — Заявка</title>
 </head>
@@ -51,31 +51,6 @@
     {{> footer }}
 
     <script type="module" src="/src/main.js"></script>
-    <script>
-        // very lightweight client-side validation UX
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('lead-form');
-            if (!form) return;
-            const showError = (name, show) => {
-                const el = form.querySelector(`.error[data-error-for="${name}"]`);
-                if (el) el.classList.toggle('active', !!show);
-            };
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                let valid = true;
-                ['company', 'name', 'email', 'phone'].forEach((field) => {
-                    const input = form.elements[field];
-                    const ok = input && input.checkValidity();
-                    showError(field, !ok);
-                    if (!ok) valid = false;
-                });
-                if (!valid) return;
-                // Replace with real submit later
-                alert('Спасибо! Мы свяжемся с вами.');
-                form.reset();
-            });
-        });
-    </script>
 </body>
 
 </html>

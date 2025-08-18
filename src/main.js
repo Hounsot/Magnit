@@ -599,7 +599,23 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
       const requiredInputs = inputs.filter((i) => isRequired(i));
       const allValid = requiredInputs.every((i) => validateInput(i));
-      if (!allValid) e.preventDefault();
+      if (!allValid) {
+        e.preventDefault();
+        return;
+      }
+      // All valid: redirect to corresponding "done" page
+      e.preventDefault();
+      const currentPath = window.location.pathname;
+      let donePath = '/contacts-done/';
+      if (/\/form\/?$/i.test(currentPath) || currentPath.includes('/form/')) {
+        donePath = '/form-done/';
+      } else if (/\/contacts\/?$/i.test(currentPath) || currentPath.includes('/contacts/')) {
+        donePath = '/contacts-done/';
+      }
+      const isGh = /github\.io$/i.test(window.location.hostname);
+      const repoBase = isGh ? ('/' + window.location.pathname.split('/').filter(Boolean)[0] + '/') : '/';
+      const target = isGh ? repoBase + donePath.slice(1) : donePath;
+      window.location.assign(target);
     });
 
     // Initialize state on load
