@@ -221,11 +221,11 @@ h2.landing_gifki_2_header {
   }
 
   .circle:nth-child(2) {
-    margin-top: 200px;
+    margin-top: 180px;
   }
 
   .circle:nth-child(3) {
-    margin-top: 180px;
+    margin-top: 150px;
   }
 
   .circle:nth-child(4) {
@@ -559,15 +559,15 @@ h2.landing_gifki_2_header {
     }
 
     .circle:nth-child(2) {
-      margin-top: 110px;
+      margin-top: 120px;
     }
 
     .circle:nth-child(3) {
-      margin-top: 140px;
+      margin-top: 120px;
     }
 
     .circle:nth-child(4) {
-      margin-top: 170px;
+      margin-top: 150px;
     }
   }
 }
@@ -701,7 +701,7 @@ h2.landing_gifki_2_header {
     }
 
     .circle:nth-child(4) {
-      margin-top: 110px;
+      margin-top: 140px;
     }
   }
 }
@@ -1283,7 +1283,7 @@ h2.landing_gifki_2_header {
     }
 
     .circle:nth-child(4) {
-      margin-top: 200px;
+      margin-top: 180px;
     }
   }
 }
