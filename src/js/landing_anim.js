@@ -1,7 +1,9 @@
 // Keep exactly one .row.active: the one closest to the vertical viewport center
 
 const rows = Array.from(document.querySelectorAll(".row"));
-const circles = Array.from(document.querySelectorAll(".circleNew"));
+const circles = Array.from(document.querySelectorAll(".circle"));
+const circlesNew = Array.from(document.querySelectorAll(".circleNew"));
+
 const gifs = Array.from(document.querySelectorAll(".gif_landing"));
 const header2 = document.querySelector(".landing_gifki_2_header");
 const landingGifki2Section = document.querySelector(".landing_gifki_2");
@@ -15,6 +17,7 @@ const boxes = Array.from(document.querySelectorAll(".box"));
 let scheduled = false;
 let lastActiveRow = null; // Изменено: убираем автопоиск активного элемента
 let lastActiveCircle = null;
+let lastActiveCircleNew = null;
 let lastActiveGif = null;
 let header2HasBeenActivated = false; // Флаг для отслеживания активации header2
 
@@ -100,10 +103,12 @@ function updateActiveRows() {
     if (lastActiveTooCloseToEdge) {
       lastActiveRow.classList.remove("active");
       if (lastActiveCircle) lastActiveCircle.classList.remove("active");
+      if (lastActiveCircleNew) lastActiveCircleNew.classList.remove("active");
       if (lastActiveGif) lastActiveGif.classList.remove("active");
 
       lastActiveRow = null;
       lastActiveCircle = null;
+      lastActiveCircleNew = null;
       lastActiveGif = null;
     }
   }
@@ -112,6 +117,7 @@ function updateActiveRows() {
     // Remove active from previous row, circle, and gif
     if (lastActiveRow) lastActiveRow.classList.remove("active");
     if (lastActiveCircle) lastActiveCircle.classList.remove("active");
+    if (lastActiveCircleNew) lastActiveCircleNew.classList.remove("active");
     if (lastActiveGif) lastActiveGif.classList.remove("active");
 
     // Add active to new row and corresponding circle and gif
@@ -122,6 +128,10 @@ function updateActiveRows() {
       if (circles[newActiveIndex]) {
         circles[newActiveIndex].classList.add("active");
         lastActiveCircle = circles[newActiveIndex];
+      }
+      if (circlesNew[newActiveIndex]) {
+        circlesNew[newActiveIndex].classList.add("active");
+        lastActiveCircleNew = circlesNew[newActiveIndex];
       }
       if (gifs[newActiveIndex]) {
         gifs[newActiveIndex].classList.add("active");
