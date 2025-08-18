@@ -343,6 +343,7 @@ h2.landing_gifki_2_header {
 }
 
 .row {
+  position: relative;
   display: flex;
   align-items: flex-start;
   width: 100%;
