@@ -1,7 +1,7 @@
 // Keep exactly one .row.active: the one closest to the vertical viewport center
 
 const rows = Array.from(document.querySelectorAll(".row"));
-const circles = Array.from(document.querySelectorAll(".circle"));
+const circles = Array.from(document.querySelectorAll(".circleNew"));
 const gifs = Array.from(document.querySelectorAll(".gif_landing"));
 const header2 = document.querySelector(".landing_gifki_2_header");
 const landingGifki2Section = document.querySelector(".landing_gifki_2");
