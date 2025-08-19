@@ -173,6 +173,13 @@ a {
       width: 52px;
     }
   }
+  @media (max-width: 479px) {
+    font-size: 14px;
+    img{
+      height: 38px;
+      width: 38px;
+    }
+  }
 }
 .back_button{
   display: flex;
@@ -407,6 +414,7 @@ a {
   display: flex;
   flex-direction: column;
   height: 100px;
+  overflow-x: hidden;
   @media (max-width: 768px) {
     height: 100px;
     gap: 0;
@@ -500,6 +508,7 @@ a {
     font-size: 20px;
   }
 }
+
 .vacancy_title {
   font-family: "RF Dewi", sans-serif;
   font-size: 60px;
@@ -517,6 +526,7 @@ a {
 .title_landing {
   font-family: "RF Dewi", sans-serif;
   font-size: 60px;
+  line-height: 100%;
   @media (max-width: 1920px) {
     font-size: 50px;
   }
@@ -631,7 +641,7 @@ a {
     @media (max-width: 768px) {
       padding-right: 40px;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 440px) {
       padding-right: 0;
     }
   }
@@ -1018,6 +1028,15 @@ a {
 .flex_grow_1 {
   flex-grow: 1;
 }
+#form_container{
+  max-width: 900px;
+}
+#first_accent_point{
+  width: 40%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
 .width_25 {
   min-width: 25%;
 }
@@ -1163,7 +1182,24 @@ a {
     border-radius: var(--objectRadius) var(--objectRadius) 0 0;
   }
 }
-
+.logos{
+  @media (max-width: 768px) {
+    gap: 0;
+    justify-content: space-between;
+    #magnit{
+      width: auto;
+      height: 50px;
+    }
+    #magnitMarket{
+      width: auto;
+      height: 40px;
+    }
+    #magnitCosmetics{
+      width: auto;
+      height: 50px;
+    }
+  }
+}
 /* Стили для мобильных экранов */
 @media (max-width: 768px) {
   .box.mobile-hover .default {

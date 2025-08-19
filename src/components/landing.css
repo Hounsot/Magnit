@@ -119,7 +119,7 @@ section.button_middle {
 section.marquee_container {
   position: relative;
   background-color: var(--grayLight);
-  padding-top: 150px;
+  padding-top: 100px;
 
   h1 {
     padding-bottom: 0 !important;

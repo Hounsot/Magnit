@@ -99,6 +99,7 @@
         height: fit-content;
         top: var(--navHeight);
         left: 0;
+        gap: 0;
         background-color: var(--white);
         padding-left: var(--paddingHorizontal);
         transform: translateY(-100%);
