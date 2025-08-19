@@ -1,413 +1,564 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Магнит Пост</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <script type="module" crossorigin src="./assets/main-h2TgN7-e.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/main-DW9GRa8Y.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-BmUPqFfS.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Магнит Пост</title>
-  <!-- favicon -->
-  <link rel="icon" type="image/png" href="./favicon.png" />
-  <script type="module" crossorigin src="./assets/main-hHxcnP8W.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/main-Dk2313kD.js">
-  <link rel="stylesheet" crossorigin href="./assets/main-i-3HlBuS.css">
-</head>
-
-<body class="footer_padding">
-  <div class="Header">
-    <div class="Header_logoAndBurger">
-      <a href="/">
-        <img class="Header_logo" src="./MagnitLogo.svg" alt="Magnit Logo">
-      </a>
-      <div class="Header_burger">
-        <div class="BurgerButton_line"></div>
-        <div class="BurgerButton_line"></div>
-        <div class="BurgerButton_line"></div>
-      </div>
-    </div>
-    <div class="HeaderLinks">
-      <a  href="/geography/">география</a>
-      <a  href="/for-internet-shops/">интернет-магазинам</a>
-      <a  href="/vacancies/">вакансии</a>
-      <a  href="/contacts/">контакты</a>
-    </div>
-  </div>
-  
-  
-  <div class="Hero_container">
-    <div class="Hero_content">
-      <h1>Магнит Пост — сервис доставки заказов для интернет-магазинов</h1>
-      <p>Привезём товары в <span class="bold">270+</span> населённых пунктов по единому тарифу <span class="bold">100 ₽</span></p>
-    </div>
-    <a href="/contacts/" class="CTA_button">Оставить заявку</a>
-  </div>
-  <section class="halves padding_half_vertical">
-    <div class="half mobile_padding_right">
-      <h1 class="title_landing">Станьте ближе<br>к покупателям</h1>
-      <p class="paragraph">Магнит Пост — логистический сервис<br>для интернет-магазинов, который поможет оптимизировать расход на логистику и увеличить географию.</p>
-      <p class="paragraph">Мы доставляем заказы в пункты выдачи<br>в <span class="bold">магазинах Магнит, Магнит Косметик</span><br>и в пункты маркетплейса <span class="bold">Магнит Маркет.</span></p>
-        <div class="flex align_center gap_60">
-          <img src="./magnit.png" alt="">
-          <img src="./magnitMarket.png" alt="">
-          <img src="./magnitCosmetics.png" alt="">
-        </div>
-    </div>
-    <div class="half image_half">
-      <img class="half_image" src="./phone.jpg" alt="">
-    </div>
-  </section>
-  <section class="landing_gifki">
-    <div class="left-side">
-      <img class="gif_landing" src="gif/gif_01.gif" alt="" />
-      <img class="gif_landing" src="gif/gif_02.gif" alt="" />
-      <img class="gif_landing" src="gif/gif_03.gif" alt="" />
-      <img class="gif_landing" src="gif/gif_04.gif" alt="" />
-    </div>
-    <div class="middle-side">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
-    <div class="right-side">
-      <div class="numbers">
-        <div class="row">
-          <div class="row_number">1</div>
-          <div class="row_text">
-            <h1 class="row_header">
-              Оформите <a href="/contacts/">заявку</a>
-            </h1>
-            <p class="row_p">
-              С вами свяжется личный менеджер
-              и всё объяснит
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row_number">2</div>
-          <div class="row_text">
-            <h1 class="row_header">
-              Подпишите <a target="_blank" href="https://legal.mm.ru/magnitpost/oferta">оферту</a>
-            </h1>
-            <p class="row_p">
-              Стандартный договор
-              на оказание услуг
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row_number">3</div>
-          <div class="row_text">
-            <h1 class="row_header">
-              Настройте <br />
-              <a target="_blank" href="https://magnit-tech.github.io/b2b-api/#tag/Magnit-Post">API-интеграцию</a>
-            </h1>
-            <p class="row_p">
-              Это позволит удобно и технологично обмениваться данными
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row_number">4</div>
-          <div class="row_text">
-            <h1 class="row_header">
-              Начните <br />
-              отгружать заказы
-            </h1>
-            <p class="row_p">
-              Любым удобным способом: <br />
-              1. Заборная логистика <br />
-              2. Пункты приёма
-            </p>
-          </div>
+  <body class="footer_padding">
+    <div class="Header">
+      <div class="Header_logoAndBurger">
+        <a href="/">
+          <img class="Header_logo" src="./MagnitLogo.svg" alt="Magnit Logo">
+        </a>
+        <div class="Header_burger">
+          <div class="BurgerButton_line"></div>
+          <div class="BurgerButton_line"></div>
+          <div class="BurgerButton_line"></div>
         </div>
       </div>
+      <div class="HeaderLinks">
+        <a  href="/geography/">география</a>
+        <a  href="/for-internet-shops/">интернет-магазинам</a>
+        <a  href="/vacancies/">вакансии</a>
+        <a  href="/contacts/">контакты</a>
+      </div>
     </div>
-  </section>
-  <section class="flex column rounded_corners background_brand padding_half_vertical align_center section_vertical_padding">
-    <div class="flex column gap_60 width_fit ipad_width_100 mobile_gap_24">
-      <p class="width_100 rounded_corners text_center banner_text box_border banner">
-        Единый тариф — <span class="bold">100 ₽</span></span><br>за одну отправку<br>в любой город присутствия
+    
+    
+    <div class="Hero_container">
+      <div class="Hero_content">
+        <h1>Магнит Пост — сервис доставки заказов для интернет-магазинов</h1>
+        <p>
+          Привезём товары в <span class="bold">270+</span> населённых пунктов
+          по единому тарифу <span class="bold">100 ₽</span>
+        </p>
+      </div>
+      <a href="/contacts/" class="CTA_button">Оставить заявку</a>
+    </div>
+    <section class="halves padding_half_vertical">
+      <div class="half mobile_padding_right">
+        <h1 class="title_landing">Станьте ближе<br />к покупателям</h1>
+        <p class="paragraph">
+          Магнит Пост — логистический сервис<br />для интернет-магазинов,
+          который поможет оптимизировать расход на логистику и увеличить
+          географию.
+        </p>
+        <p class="paragraph">
+          Мы доставляем заказы в пункты выдачи<br />в <span class="bold"
+            >магазинах Магнит, Магнит Косметик</span
+          ><br />и в пункты маркетплейса
+          <span class="bold">Магнит Маркет.</span>
+        </p>
+        <div class="flex align_center gap_60 logos">
+          <img id="magnit" src="./magnit.png" alt="" />
+          <img id="magnitMarket" src="./magnitMarket.png" alt="" />
+          <img id="magnitCosmetics" src="./magnitCosmetics.png" alt="" />
+        </div>
+      </div>
+      <div class="half image_half">
+        <img class="half_image" src="./phone.jpg" alt="" />
+      </div>
+    </section>
+    <section class="landing_gifki">
+      <div class="left-side">
+        <img class="gif_landing" src="gif/gif_01.gif" alt="" />
+        <img class="gif_landing" src="gif/gif_02.gif" alt="" />
+        <img class="gif_landing" src="gif/gif_03.gif" alt="" />
+        <img class="gif_landing" src="gif/gif_04.gif" alt="" />
+      </div>
+      <div class="middle-side">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <div class="right-side">
+        <div class="numbers">
+          <div class="row">
+            <div class="row_number">1</div>
+            <div class="circleNew firstB"></div>
+            <div class="row_text">
+              <h1 class="row_header">
+                Оформите <a href="/contacts/">заявку</a>
+              </h1>
+              <p class="row_p">
+                С вами свяжется личный менеджер и всё объяснит
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="row_number">2</div>
+            <div class="circleNew firstB"></div>
+            <div class="row_text">
+              <h1 class="row_header">
+                Подпишите
+                <a target="_blank" href="https://legal.mm.ru/magnitpost/oferta"
+                  >оферту</a
+                >
+              </h1>
+              <p class="row_p">Стандартный договор на оказание услуг</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="row_number">3</div>
+            <div class="circleNew firstB"></div>
+            <div class="row_text">
+              <h1 class="row_header">
+                Настройте <br />
+                <a
+                  target="_blank"
+                  href="https://magnit-tech.github.io/b2b-api/#tag/Magnit-Post"
+                  >API-интеграцию</a
+                >
+              </h1>
+              <p class="row_p">
+                Это позволит удобно и технологично обмениваться данными
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="row_number">4</div>
+            <div class="circleNew firstB"></div>
+            <div class="row_text">
+              <h1 class="row_header">
+                Начните <br />
+                отгружать заказы
+              </h1>
+              <p class="row_p">
+                Любым удобным способом: <br />
+                1. Заборная логистика <br />
+                2. Пункты приёма
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="flex column rounded_corners background_brand padding_half_vertical align_center section_vertical_padding"
+    >
+      <div class="flex column gap_60 width_fit ipad_width_100 mobile_gap_24">
+        <p
+          class="width_100 rounded_corners text_center banner_text box_border banner"
+        >
+          Единый тариф — <span class="bold">100 ₽</span><br />за одну
+          отправку<br />в любой город присутствия
+        </p>
+        <h2 class="header2 mobile_center">Тариф включает в себя:</h2>
+        <div class="box_container">
+          <div class="background_white box flex column rounded_corners">
+            <img class="default" src="./Item.png" alt="" />
+            <img class="hover" src="./ItemActive.gif" alt="" />
+            <p>Приём товара на склад</p>
+          </div>
+          <div class="background_white box flex column rounded_corners">
+            <img class="default" src="./Save.png" alt="" />
+            <img class="hover" src="./SaveActive.gif" alt="" />
+            <p>Страхование<br />отправления​​</p>
+          </div>
+          <div class="background_white box flex column rounded_corners">
+            <img class="default" src="./Delivery.png" alt="" />
+            <img class="hover" src="./DeliveryActive.gif" alt="" />
+            <p>Доставку<br />до пункта выдачи</p>
+          </div>
+          <div class="background_white box flex column rounded_corners">
+            <img class="default" src="./Saving.png" alt="" />
+            <img class="hover" src="./SavingActive.gif" alt="" />
+            <p>Хранение 5 дней<br />и бесплатное продление</p>
+          </div>
+          <div class="background_white box flex column rounded_corners">
+            <img class="default" src="./Client.png" alt="" />
+            <img class="hover" src="./ClientActive.gif" alt="" />
+            <p>Выдачу<br />отправления клиенту</p>
+          </div>
+          <div class="background_white box flex column rounded_corners">
+            <img class="default" src="./Return.png" alt="" />
+            <img class="hover" src="./ReturnActive.gif" alt="" />
+            <p>Возврат,<br />если он необходим</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="landing_gifki_2">
+      <div class="middle-side"></div>
+      <div class="right-side">
+        <div class="numbers">
+          <h2 class="landing_gifki_2_header">Для кого мы</h2>
+          <div class="row">
+            <div class="circleNew"></div>
+            <div class="row_text">
+              <h1 class="row_header">Для интернет-магазинов</h1>
+              <p class="row_p">
+                Во всех городах присутствия работает заборная логистика,
+                а в Москве и Казани есть пункты приёма
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="circleNew"></div>
+            <div class="row_text">
+              <h1 class="row_header">
+                Для бизнеса, который <br />
+                хочет расширяться
+              </h1>
+              <p class="row_p">
+                Поможем ускорить доставку и снизить логистические расходы
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="circleNew"></div>
+            <div class="row_text">
+              <h1 class="row_header">Для ваших клиентов</h1>
+              <p class="row_p">
+                Доставим любой* груз не тяжелее 15 кг, но не больше 200 см
+                по сумме трёх измерений и 80 см по одной стороне
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="left-side">
+        <img class="gif_landing" src="gif/gif_05.gif" alt="" />
+        <img class="gif_landing" src="gif/gif_06.gif" alt="" />
+        <img class="gif_landing" src="gif/gif_07.gif" alt="" />
+      </div>
+    </section>
+    <section class="button_middle">
+      <a href="/contacts/" class="CTA_button">Оформить заявку</a>
+    </section>
+    <section class="marquee_container">
+      <h1 class="title_landing mobile_center">Наши клиенты</h1>
+      <div class="marquee_wrapper">
+        <div class="marquee">
+          <img src="./marquee/dns.jpg" alt="" />
+          <img src="./marquee/bombbar.png" alt="" />
+          <img src="./marquee/bronits.png" alt="" />
+          <img src="./marquee/tasty.svg" alt="" />
+          <img src="./marquee/love_market.svg" alt="" />
+          <img src="./marquee/alik.svg" alt="" />
+        </div>
+        <div class="marquee">
+          <img src="./marquee/dns.jpg" alt="" />
+          <img src="./marquee/bombbar.png" alt="" />
+          <img src="./marquee/bronits.png" alt="" />
+          <img src="./marquee/tasty.svg" alt="" />
+          <img src="./marquee/love_market.svg" alt="" />
+          <img src="./marquee/alik.svg" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="flex column padding_half_vertical background_gray gap_60">
+      <h2 class="title_landing">Часто задаваемые вопросы</h2>
+      <div class="flex column">
+        <div class="faq_content first">
+          <div class="flex justify_between align_center faq_content_header">
+            <p class="faq_question">
+              Как быстро отправление доедет до выбранного пункта выдачи заказов
+              (ПВЗ)?
+            </p>
+            <div class="open_button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55px"
+                height="55px"
+                viewBox="0 0 65 65"
+                fill="none"
+              >
+                <path
+                  d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+                  stroke="#8B8B8B"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <p class="faq_point">Среднее время доставки отправления – 2 дня.</p>
+        </div>
+        <div class="faq_content">
+          <div class="flex justify_between align_center faq_content_header">
+            <p class="faq_question">
+              Какие документы необходимы для передачи отправления?
+            </p>
+            <div class="open_button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55px"
+                height="55px"
+                viewBox="0 0 65 65"
+                fill="none"
+              >
+                <path
+                  d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+                  stroke="#8B8B8B"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <p class="faq_point">
+            Если отгрузка осуществляется с вашего склада, потребуется
+            транспортная накладная. Если вы привозите отправления на наш пункт
+            приёма, необходим акт приёма-передачи.
+          </p>
+        </div>
+        <div class="faq_content">
+          <div class="flex justify_between align_center faq_content_header">
+            <p class="faq_question">Как отменить заказ?</p>
+            <div class="open_button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55px"
+                height="55px"
+                viewBox="0 0 65 65"
+                fill="none"
+              >
+                <path
+                  d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+                  stroke="#8B8B8B"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <p class="faq_point">
+            Отменить заказ, используя API, можно до момента его поступления на
+            наш склад. Если отправление уже доставлено на склад, свяжитесь с
+            нашей службой поддержки.
+          </p>
+        </div>
+        <div class="faq_content">
+          <div class="flex justify_between align_center faq_content_header">
+            <p class="faq_question">
+              Как осуществляется возврат заказов от покупателей?
+            </p>
+            <div class="open_button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55px"
+                height="55px"
+                viewBox="0 0 65 65"
+                fill="none"
+              >
+                <path
+                  d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+                  stroke="#8B8B8B"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <p class="faq_point">
+            Мы осуществляем возврат только невостребованных заказов. Если
+            покупатель забрал свой заказ из ПВЗ, возврат невозможен.
+          </p>
+        </div>
+        <div class="faq_content">
+          <div class="flex justify_between align_center faq_content_header">
+            <p class="faq_question">
+              Можно ли сдать отправления в одном из ПВЗ Магнит Маркет?
+            </p>
+            <div class="open_button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55px"
+                height="55px"
+                viewBox="0 0 65 65"
+                fill="none"
+              >
+                <path
+                  d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+                  stroke="#8B8B8B"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <p class="faq_point">
+            Нет, отправления могут быть либо доставлены вами в наши пункты
+            приёма, либо переданы нашему курьеру в ходе заборной логистики.
+          </p>
+        </div>
+        <div class="faq_content">
+          <div class="flex justify_between align_center faq_content_header">
+            <p class="faq_question">
+              Что делать, если отправление не было доставлено в Пункт Выдачи
+              Заказов, было повреждено или утеряно?
+            </p>
+            <div class="open_button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55px"
+                height="55px"
+                viewBox="0 0 65 65"
+                fill="none"
+              >
+                <path
+                  d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+                  stroke="#8B8B8B"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <p class="faq_point">
+            В случае повреждения или утери отправления, обратитесь, пожалуйста,
+            в нашу службу поддержки.
+          </p>
+        </div>
+        <div class="faq_content">
+          <div class="flex justify_between align_center faq_content_header">
+            <p class="faq_question">
+              Можно продлить срок хранения отправления?
+            </p>
+            <div class="open_button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55px"
+                height="55px"
+                viewBox="0 0 65 65"
+                fill="none"
+              >
+                <path
+                  d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+                  stroke="#8B8B8B"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <p class="faq_point">
+            Допустимо однократное продление срока хранения заказа на 5 дней
+            по запросу в нашу службу поддержки.
+          </p>
+        </div>
+        <div class="faq_content">
+          <div class="flex justify_between align_center faq_content_header">
+            <p class="faq_question">
+              Как осуществляется возврат невостребованных заказов?
+            </p>
+            <div class="open_button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55px"
+                height="55px"
+                viewBox="0 0 65 65"
+                fill="none"
+              >
+                <path
+                  d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+                  stroke="#8B8B8B"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <p class="faq_point">
+            Если покупатель не забрал свой заказ, такое отправление возвращается
+            на наш склад, откуда вы можете забрать его самостоятельно или
+            запросить доставку до вашего места хранения.
+          </p>
+        </div>
+        <div class="faq_content">
+          <div class="flex justify_between align_center faq_content_header">
+            <p class="faq_question">Как узнать, где находится заказ?</p>
+            <div class="open_button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="55px"
+                height="55px"
+                viewBox="0 0 65 65"
+                fill="none"
+              >
+                <path
+                  d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+                  stroke="#8B8B8B"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <p class="faq_point">
+            Отслеживать заказы и их статусы можно через нашу систему
+            API-интеграции.
+          </p>
+        </div>
+        <div class="flex gap_10 align_center open_faq">
+          Открыть все ответы
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="45px"
+            height="45px"
+            viewBox="0 0 65 65"
+            fill="none"
+          >
+            <path
+              d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27"
+              stroke="#8B8B8B"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="cookies">
+      <p>
+        Для обеспечения оптимальной работы и улучшения пользовательского опыта
+        на сайте используются технологии
+        <span class="bold">cookie.</span> Продолжая пользоваться сайтом, Вы
+        соглашаетесь с размещением cookie-файлов на Вашем устройстве на
+        условиях, изложенных в
+        <a class="bold" href="https://legal.mm.ru/#rec748026316"
+          >Политике в отношении обработки персональных данных.</a
+        >
       </p>
-      <h2 class="header2 mobile_center">Тариф включает в себя:</h2>
-      <div class="box_container">
-        <div class="background_white box flex column rounded_corners">
-          <img class="default" src="./Item.png" alt="">
-          <img class="hover" src="./ItemActive.gif" alt="">
-          <p>Приём товара на склад</p>
+      <div class="cookies_buttons">
+        <div class="accept_button">Принять</div>
+        <a
+          class="accept_button secondary"
+          href="https://legal.mm.ru/#rec748026316"
+          >Подробнее</a
+        >
+      </div>
+    </section>
+    <footer class="Footer">
+      <div class="justify align_center first_footer_row">
+        <div class="footer_contacts">
+          <p class="paragraph">Остались вопросы? Напишите нам:</p>
+          <a class="header brand magnit" href="mailto:post@magnit.ru">post@magnit.ru</a>
         </div>
-        <div class="background_white box flex column rounded_corners">
-          <img class="default" src="./Save.png" alt="">
-          <img class="hover" src="./SaveActive.gif" alt="">
-          <p>Страхование<br>отправления​​</p>
-        </div>
-        <div class="background_white box flex column rounded_corners">
-          <img class="default" src="./Delivery.png" alt="">
-          <img class="hover" src="./DeliveryActive.gif" alt="">
-          <p>Доставку<br>до пункта выдачи</p>
-        </div>
-        <div class="background_white box flex column rounded_corners">
-          <img class="default" src="./Saving.png" alt="">
-          <img class="hover" src="./SavingActive.gif" alt="">
-          <p>Хранение 5 дней<br>и бесплатное продление</p>
-        </div>
-        <div class="background_white box flex column rounded_corners">
-          <img class="default" src="./Client.png" alt="">
-          <img class="hover" src="./ClientActive.gif" alt="">
-          <p>Выдачу<br>отправления клиенту</p>
-        </div>
-        <div class="background_white box flex column rounded_corners">
-          <img class="default" src="./Return.png" alt="">
-          <img class="hover" src="./ReturnActive.gif" alt="">
-          <p>Возврат,<br>если он необходим</p>
-        </div>
-      </div>  
-    </div>
-  </section>
-  <section class="landing_gifki_2">
-    <div class="middle-side">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
-    <div class="right-side">
-      <div class="numbers">
-        <h2 class="landing_gifki_2_header">Для кого мы</h2>
-        <div class="row">
-          <div class="row_text">
-            <h1 class="row_header">Для интернет-магазинов</h1>
-            <p class="row_p">
-              Во всех городах присутствия работает
-              заборная логистика, а в Москве и Казани
-              есть пункты приёма
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row_text">
-            <h1 class="row_header">
-              Для бизнеса, который <br />
-              хочет расширяться
-            </h1>
-            <p class="row_p">
-              Поможем ускорить доставку
-              и снизить логистические расходы
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row_text">
-            <h1 class="row_header">Для ваших клиентов</h1>
-            <p class="row_p">
-              Доставим любой* груз не тяжелее 15 кг,
-              но не больше 200 см по сумме трёх измерений 
-              и 80 см по одной стороне
-            </p>
-          </div>
+        <a class="back_to_top" href="#">
+          <img src="./ArrowActiveRed.svg" alt="">
+          Наверх
+        </a>
+      </div>
+      <div class="justify align_center border_top second_footer_row">
+        <p class="paragraph">2024-2025 © ООО «Магнит Маркет»</p>
+        <div class="footer_links">
+          <a href="/geography/">география</a>
+          <a href="/for-internet-shops/">интернет-магазинам</a>
+          <a href="/vacancies/">вакансии</a>
         </div>
       </div>
-    </div>
-    <div class="left-side">
-      <img class="gif_landing" src="gif/gif_05.gif" alt="" />
-      <img class="gif_landing" src="gif/gif_06.gif" alt="" />
-      <img class="gif_landing" src="gif/gif_07.gif" alt="" />
-    </div>
-  </section>
-  <section class="button_middle">
-    <a href="/contacts/" class="CTA_button">Оформить заявку</a>
-  </section>
-  <section class="marquee_container">
-    <h1 class="title_landing mobile_center">Наши клиенты</h1>
-    <div class="marquee_wrapper">
-      <div class="marquee">
-        <img src="./marquee/dns.jpg" alt="" />
-        <img src="./marquee/bombbar.png" alt="" />
-        <img src="./marquee/bronits.png" alt="" />
-        <img src="./marquee/tasty.svg" alt="" />
-        <img src="./marquee/love_market.svg" alt="" />
-        <img src="./marquee/alik.svg" alt="" />
-      </div>
-      <div class="marquee">
-        <img src="./marquee/dns.jpg" alt="" />
-        <img src="./marquee/bombbar.png" alt="" />
-        <img src="./marquee/bronits.png" alt="" />
-        <img src="./marquee/tasty.svg" alt="" />
-        <img src="./marquee/love_market.svg" alt="" />
-        <img src="./marquee/alik.svg" alt="" />
-      </div>
-    </div>
-  </section>
-  <section class="flex column padding_half_vertical background_gray gap_60">
-    <h2 class="title_landing">Часто задаваемые вопросы</h2>
-    <div class="flex column">
-      <div class="faq_content first">
-        <div class="flex justify_between align_center faq_content_header">
-          <p class="faq_question">Как быстро отправление доедет до выбранного пункта выдачи заказов (ПВЗ)?</p>
-          <div class="open_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
-              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-            </svg>
-          </div>
-        </div>
-        <p class="faq_point">
-          Среднее время доставки отправления – 2 дня.
-        </p>
-      </div>
-      <div class="faq_content">
-        <div class="flex justify_between align_center faq_content_header">
-          <p class="faq_question">Какие документы необходимы для передачи отправления?
-          </p>
-          <div class="open_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
-              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-            </svg>
-          </div>
-        </div>
-        <p class="faq_point">
-          Если отгрузка осуществляется с вашего склада, потребуется транспортная накладная.
-Если вы привозите отправления на наш пункт приёма, необходим акт приёма-передачи.
-        </p>
-      </div>
-      <div class="faq_content">
-        <div class="flex justify_between align_center faq_content_header">
-          <p class="faq_question">Как отменить заказ?
-          </p>
-          <div class="open_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
-              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-            </svg>
-          </div>
-        </div>
-        <p class="faq_point">
-          Отменить заказ, используя API, можно до момента его поступления на наш склад.
-Если отправление уже доставлено на склад, свяжитесь с нашей службой поддержки.
-        </p>
-      </div>
-      <div class="faq_content">
-        <div class="flex justify_between align_center faq_content_header">
-          <p class="faq_question">Как осуществляется возврат заказов от покупателей?
-          </p>
-          <div class="open_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
-              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-            </svg>
-          </div>
-        </div>
-        <p class="faq_point">
-          Мы осуществляем возврат только невостребованных заказов.
-Если покупатель забрал свой заказ из ПВЗ, возврат невозможен.
-        </p>
-      </div>
-      <div class="faq_content">
-        <div class="flex justify_between align_center faq_content_header">
-          <p class="faq_question">Можно ли сдать отправления в одном из ПВЗ Магнит Маркет?
-          </p>
-          <div class="open_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
-              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-            </svg>
-          </div>
-        </div>
-        <p class="faq_point">
-          Нет, отправления могут быть либо доставлены вами в наши пункты приёма,
-либо переданы нашему курьеру в ходе заборной логистики.
-        </p>
-      </div>
-      <div class="faq_content">
-        <div class="flex justify_between align_center faq_content_header">
-          <p class="faq_question">Что делать, если отправление не было доставлено в Пункт Выдачи Заказов,
-            было повреждено или утеряно?            
-          </p>
-          <div class="open_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
-              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-            </svg>
-          </div>
-        </div>
-        <p class="faq_point">
-          В случае повреждения или утери отправления, обратитесь, пожалуйста, в нашу службу поддержки.
-        </p>
-      </div>
-      <div class="faq_content">
-        <div class="flex justify_between align_center faq_content_header">
-          <p class="faq_question">Можно продлить срок хранения отправления?         
-          </p>
-          <div class="open_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
-              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-            </svg>
-          </div>
-        </div>
-        <p class="faq_point">
-          Допустимо однократное продление срока хранения заказа на 5 дней по запросу в нашу службу поддержки.
-        </p>
-      </div>
-      <div class="faq_content">
-        <div class="flex justify_between align_center faq_content_header">
-          <p class="faq_question">Как осуществляется возврат невостребованных заказов?       
-          </p>
-          <div class="open_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
-              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-            </svg>
-          </div>
-        </div>
-        <p class="faq_point">
-          Если покупатель не забрал свой заказ, такое отправление возвращается на наш склад,
-откуда вы можете забрать его самостоятельно или запросить доставку до вашего места хранения.
-        </p>
-      </div>
-      <div class="faq_content">
-        <div class="flex justify_between align_center faq_content_header">
-          <p class="faq_question">Как узнать, где находится заказ?
-          </p>
-          <div class="open_button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 65 65" fill="none">
-              <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-            </svg>
-          </div>
-        </div>
-        <p class="faq_point">
-          Отслеживать заказы и их статусы можно через нашу систему API-интеграции.
-        </p>
-      </div>
-      <div class="flex gap_10 align_center open_faq">Открыть все ответы <svg xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewBox="0 0 65 65" fill="none">
-        <path d="M49 27L33.4919 42.5081C33.2202 42.7798 32.7798 42.7798 32.5081 42.5081L17 27" stroke="#8B8B8B" stroke-width="2.2" stroke-linecap="round"></path>
-      </svg></div>
-    </div>
-  </section>
-  <section class="cookies">
-    <p>Для обеспечения оптимальной работы и улучшения пользовательского опыта на сайте используются технологии <span class="bold">cookie.</span>
-      Продолжая пользоваться сайтом, Вы соглашаетесь с размещением cookie-файлов на Вашем устройстве на условиях, изложенных в <a class="bold" href="https://legal.mm.ru/#rec748026316">Политике в отношении обработки персональных данных.</a>
-      <div>
-    </p>
-    <div class="cookies_buttons">
-      <div class="accept_button">Принять</div>
-      <a class="accept_button secondary" href="https://legal.mm.ru/#rec748026316">Подробнее</a>
-    </div>
-    </div>
-  </section>
-  <footer class="Footer">
-    <div class="justify align_center first_footer_row">
-      <div class="footer_contacts">
-        <p class="paragraph">Остались вопросы? Напишите нам:</p>
-        <a class="header brand magnit" href="mailto:post@magnit.ru">post@magnit.ru</a>
-      </div>
-      <a class="back_to_top" href="#">
-        <img src="./ArrowActiveRed.svg" alt="">
-        Наверх
-      </a>
-    </div>
-    <div class="justify align_center border_top second_footer_row">
-      <p class="paragraph">2024-2025 © ООО «Магнит Маркет»</p>
-      <div class="footer_links">
-        <a href="/geography/">география</a>
-        <a href="/for-internet-shops/">интернет-магазинам</a>
-        <a href="/vacancies/">вакансии</a>
-      </div>
-    </div>
-  </footer>
-  
-  
-</body>
-
+    </footer>
+    
+    
+  </body>
 </html>
