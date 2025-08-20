@@ -40,7 +40,6 @@
     color: #fff;
     font-size: 20px;
     line-height: 1.2;
-
     background-color: #595959;
     letter-spacing: 0.7px;
     border-radius: 100px;
@@ -50,6 +49,11 @@
     font-size: 20px;
     line-height: 50px;
     margin-right: 22px;
+    transition: 0.3s ease-in-out;
+    &:hover{
+      background-color: var(--brand);
+      box-shadow: 0 4px 5px #0003;
+    }
   }
 }
 

@@ -29,8 +29,20 @@
         font-size: var(--heroHeader);
         line-height: 110%;
         max-width: 50%;
-        @media (max-width: 1440px) {
+        @media (max-width: 1919px) {
+            max-width: 55%;
+        }
+        @media (max-width: 1600px) {
             max-width: 60%;
+        }
+        @media (max-width: 1440px) {
+            max-width: 65%;
+        }
+        @media (max-width: 1200px) {
+            max-width: 70%;
+        }
+        @media (max-width: 1200px) {
+            max-width: 75%;
         }
         @media (max-width: 1024px) {
             max-width: 80%;

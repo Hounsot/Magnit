@@ -120,6 +120,8 @@ body {
   padding-top: var(--navHeight);
   min-height: 100vh;
   padding-bottom: var(--footerHeight);
+  width: 100%;
+  overflow-x: hidden;
   .Footer {
     position: absolute;
     z-index: 1000;
@@ -629,8 +631,16 @@ a {
 .half {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 48px;
   width: 100%;
+  .paragraph{
+    @media (max-width: 768px){
+      max-width: 70%;
+    }
+    @media (max-width: 570px){
+      max-width: 100%;
+    }
+  }
   &.align_center {
     justify-content: center;
   }
@@ -708,8 +718,8 @@ a {
     @media (max-width: 768px) {
       font-size: 18px;
     }
-    @media (max-width: 390px) {
-      font-size: 14px;
+    @media (max-width: 479px) {
+      font-size: 15px;
     }
   }
 }
@@ -819,6 +829,11 @@ a {
     .hover {
       display: block;
     }
+  }
+}
+.mobile_hide{
+  @media (max-width: 479px) {
+    display: none;
   }
 }
 .card_content {
@@ -1113,6 +1128,12 @@ a {
   div {
     width: 50%;
   }
+  &:first-of-type{
+    width: 40%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 12px;
@@ -1133,6 +1154,7 @@ a {
 .geography_points{
   padding-left: 24px;
   @media (max-width: 768px) {
+    gap: 14px;
     padding-left: 20px;
   }
 }
