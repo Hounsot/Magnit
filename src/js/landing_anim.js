@@ -26,7 +26,8 @@ let header2HasBeenActivated = false; // Флаг для отслеживания
 function updateActiveRows() {
   scheduled = false;
   const viewportCenterY = window.innerHeight / 2;
-  const edgeThreshold = 400; // Увеличиваем с 50 до 200 пикселей
+  // Уменьшаем порог для маленьких экранов, чтобы row элементы дольше оставались активными
+  const edgeThreshold = window.innerWidth < 461 ? 150 : 400;
 
   // Pick the row intersecting center with the smallest distance to center
   let bestCandidate = null;
@@ -52,12 +53,19 @@ function updateActiveRows() {
     const header2Rect = header2.getBoundingClientRect();
     const header2IsVisible =
       header2Rect.top < window.innerHeight && header2Rect.bottom > 0;
-    const header2IntersectsCenter =
-      header2Rect.top <= viewportCenterY &&
-      header2Rect.bottom >= viewportCenterY;
 
-    // Активируем header2, если он проходит через центр экрана
-    if (header2IntersectsCenter && !header2HasBeenActivated) {
+    // Для экранов меньше 461px активируем header2 раньше (на 200px выше и ниже центра)
+    const activationPointTop =
+      window.innerWidth < 461 ? viewportCenterY + 200 : viewportCenterY;
+    const activationPointBottom =
+      window.innerWidth < 461 ? viewportCenterY - 150 : viewportCenterY;
+
+    const header2IntersectsActivationPoint =
+      header2Rect.top <= activationPointTop &&
+      header2Rect.bottom >= activationPointBottom;
+
+    // Активируем header2, если он проходит через точку активации
+    if (header2IntersectsActivationPoint && !header2HasBeenActivated) {
       header2.classList.add("active");
       header2HasBeenActivated = true;
     }
