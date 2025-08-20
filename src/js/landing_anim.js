@@ -7,6 +7,7 @@ const circlesNew = Array.from(document.querySelectorAll(".circleNew"));
 const gifs = Array.from(document.querySelectorAll(".gif_landing"));
 const header2 = document.querySelector(".landing_gifki_2_header");
 const landingGifki2Section = document.querySelector(".landing_gifki_2");
+const landingGifkiSection = document.querySelector(".landing_gifki");
 const firstRowInSection2 = landingGifki2Section
   ? landingGifki2Section.querySelector(".row")
   : null;
@@ -26,7 +27,8 @@ let header2HasBeenActivated = false; // Флаг для отслеживания
 function updateActiveRows() {
   scheduled = false;
   const viewportCenterY = window.innerHeight / 2;
-  const edgeThreshold = 400; // Увеличиваем с 50 до 200 пикселей
+  // Уменьшаем порог для маленьких экранов, чтобы row элементы дольше оставались активными
+  const edgeThreshold = window.innerWidth < 461 ? 150 : 400;
 
   // Pick the row intersecting center with the smallest distance to center
   let bestCandidate = null;
@@ -34,10 +36,23 @@ function updateActiveRows() {
 
   for (const row of rows) {
     const rect = row.getBoundingClientRect();
-    const intersectsCenter =
-      rect.top <= viewportCenterY && rect.bottom >= viewportCenterY;
 
-    if (intersectsCenter) {
+    // Для экранов меньше 461px используем расширенную зону активации для row внутри landing_gifki (первой секции)
+    const isInLandingGifki =
+      landingGifkiSection && landingGifkiSection.contains(row);
+    const activationTop =
+      isInLandingGifki && window.innerWidth < 461
+        ? viewportCenterY + 200
+        : viewportCenterY;
+    const activationBottom =
+      isInLandingGifki && window.innerWidth < 461
+        ? viewportCenterY - 200
+        : viewportCenterY;
+
+    const intersectsActivationZone =
+      rect.top <= activationTop && rect.bottom >= activationBottom;
+
+    if (intersectsActivationZone) {
       const rowCenter = (rect.top + rect.bottom) / 2;
       const distance = Math.abs(rowCenter - viewportCenterY);
       if (distance < bestDistance) {
@@ -52,12 +67,19 @@ function updateActiveRows() {
     const header2Rect = header2.getBoundingClientRect();
     const header2IsVisible =
       header2Rect.top < window.innerHeight && header2Rect.bottom > 0;
-    const header2IntersectsCenter =
-      header2Rect.top <= viewportCenterY &&
-      header2Rect.bottom >= viewportCenterY;
 
-    // Активируем header2, если он проходит через центр экрана
-    if (header2IntersectsCenter && !header2HasBeenActivated) {
+    // Для экранов меньше 461px активируем header2 раньше (на 200px выше и ниже центра)
+    const activationPointTop =
+      window.innerWidth < 461 ? viewportCenterY + 200 : viewportCenterY;
+    const activationPointBottom =
+      window.innerWidth < 461 ? viewportCenterY - 150 : viewportCenterY;
+
+    const header2IntersectsActivationPoint =
+      header2Rect.top <= activationPointTop &&
+      header2Rect.bottom >= activationPointBottom;
+
+    // Активируем header2, если он проходит через точку активации
+    if (header2IntersectsActivationPoint && !header2HasBeenActivated) {
       header2.classList.add("active");
       header2HasBeenActivated = true;
     }
@@ -94,11 +116,42 @@ function updateActiveRows() {
   // Проверяем только текущий активный элемент на близость к краю для деактивации
   if (lastActiveRow) {
     const lastActiveRect = lastActiveRow.getBoundingClientRect();
+
+    // Проверяем, является ли текущий активный row последним в своей секции
+    const isInLandingGifki =
+      landingGifkiSection && landingGifkiSection.contains(lastActiveRow);
+    const isInLandingGifki2 =
+      landingGifki2Section && landingGifki2Section.contains(lastActiveRow);
+
+    let rowsInSection = [];
+    if (isInLandingGifki) {
+      rowsInSection = Array.from(landingGifkiSection.querySelectorAll(".row"));
+    } else if (isInLandingGifki2) {
+      rowsInSection = Array.from(landingGifki2Section.querySelectorAll(".row"));
+    }
+
+    const isLastRowInSection =
+      rowsInSection.length > 0 &&
+      lastActiveRow === rowsInSection[rowsInSection.length - 1];
+
+    // Для последних row в секциях на маленьких экранах используем увеличенный порог снизу
+    const bottomThreshold =
+      window.innerWidth < 461
+        ? isLastRowInSection
+          ? edgeThreshold + 400
+          : edgeThreshold + 200
+        : edgeThreshold;
+
     const lastActiveTooCloseToTop = lastActiveRect.bottom < edgeThreshold;
     const lastActiveTooCloseToBottom =
-      lastActiveRect.top > window.innerHeight - edgeThreshold;
+      lastActiveRect.top > window.innerHeight - bottomThreshold;
+    // Добавляем проверку для верхней границы экрана на маленьких экранах
+    const lastActiveTooCloseToTopEdge =
+      window.innerWidth < 461 && lastActiveRect.top < 200;
     const lastActiveTooCloseToEdge =
-      lastActiveTooCloseToTop || lastActiveTooCloseToBottom;
+      lastActiveTooCloseToTop ||
+      lastActiveTooCloseToBottom ||
+      lastActiveTooCloseToTopEdge;
 
     if (lastActiveTooCloseToEdge) {
       lastActiveRow.classList.remove("active");

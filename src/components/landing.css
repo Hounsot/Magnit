@@ -1001,6 +1001,8 @@ h2.landing_gifki_2_header {
   }
 
   section.landing_gifki_2 {
+    margin-top: 80px;
+
     .gif_landing {
       &:nth-child(1) {
         max-width: 175px;
@@ -1076,6 +1078,7 @@ h2.landing_gifki_2_header {
 
 @media (max-width: 520px) {
   section.landing_gifki_2 {
+    margin-top: 50px;
     .middle-side {
       .circle:nth-child(1) {
         margin-top: 90px;
