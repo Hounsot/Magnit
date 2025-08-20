@@ -28,7 +28,7 @@ function updateActiveRows() {
   scheduled = false;
   const viewportCenterY = window.innerHeight / 2;
   // Уменьшаем порог для маленьких экранов, чтобы row элементы дольше оставались активными
-  const edgeThreshold = window.innerWidth < 461 ? 150 : 400;
+  const edgeThreshold = window.innerWidth < 461 ? 150 : 100;
 
   // Pick the row intersecting center with the smallest distance to center
   let bestCandidate = null;
@@ -42,7 +42,7 @@ function updateActiveRows() {
       landingGifkiSection && landingGifkiSection.contains(row);
     const activationTop =
       isInLandingGifki && window.innerWidth < 461
-        ? viewportCenterY + 200
+        ? viewportCenterY + 300
         : viewportCenterY;
     const activationBottom =
       isInLandingGifki && window.innerWidth < 461
