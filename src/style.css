@@ -354,6 +354,9 @@ a {
 .faq_point {
   max-width: 70%;
   font-size: 18px;
+  margin-top: -20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   @media (max-width: 768px) {
     max-width: 100%;
     font-size: 15px;
@@ -428,6 +431,9 @@ a {
     border-top: 2px solid var(--grayDark);
   }
   &.expanded {
+    .faq_point {
+      opacity: 1;
+    }
   }
 
   /* Hide FAQ items after the 4th by default */

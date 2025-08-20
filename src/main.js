@@ -420,7 +420,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const headerHeight = header.offsetHeight;
           const pointHeight = faqPoint.scrollHeight;
           const padding = 40; // Extra padding
-          const totalHeight = headerHeight + pointHeight + padding;
+          // Account for negative margin-top on .faq_point to avoid extra bottom gap
+          const pointMarginTop = parseFloat(window.getComputedStyle(faqPoint).marginTop) || 0;
+          const totalHeight = headerHeight + pointHeight + padding + Math.min(0, pointMarginTop);
           
           faqContent.classList.add('expanded');
           openButton.classList.add('active');
