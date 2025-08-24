@@ -6,7 +6,7 @@
     width: 100%;
     border-radius: 40px 40px 0 0;
     overflow: hidden;
-    background-image: url('/hero_bg.jpg');
+    background-image: url('https://optim.tildacdn.com/tild3939-6563-4463-b361-323665643636/-/format/webp/hero_bg.jpg.webp');
     background-size: cover;
     background-position: center right;
     color: var(--white);
@@ -16,7 +16,7 @@
         padding: 0 50px;
     }
     @media (max-width: 768px) {
-        background-image: url('/HeroIpad.jpg');
+        background-image: url('https://optim.tildacdn.com/tild6164-3336-4462-b663-306362343336/-/format/webp/HeroIpad.jpg.webp');
         background-position: -210px bottom;
         padding: 0 20px;
     }

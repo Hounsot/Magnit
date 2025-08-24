@@ -1,6 +1,6 @@
 .CTA_button{
     background-color: var(--brand);
-    color: var(--white);
+    color: var(--white) !important;
     padding: 0 30px;
     border-radius: 100px;
     text-align: center;
@@ -19,7 +19,7 @@
 }
 .CTA_2_button{
     background-color: var(--brand);
-    color: var(--white);
+    color: var(--white) !important;
     padding: 0 30px;
     border-radius: 100px;
     text-align: center;
@@ -37,7 +37,7 @@
 }
 .CTA_3_button{
     background-color: var(--brand);
-    color: var(--white);
+    color: var(--white) !important;
     padding: 0 30px;
     border-radius: 100px;
     text-align: center;
@@ -59,7 +59,7 @@
 .disabled{
     cursor: not-allowed !important;
     background-color: var(--grayDark);
-    color: var(--grayLight);
+    color: var(--grayLight) !important;
 }
 @media (max-width: 1920px) {
     .CTA_3_button{

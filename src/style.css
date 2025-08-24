@@ -7,21 +7,21 @@
 
 @font-face {
   font-family: "Magnit";
-  src: url("/fonts/Magnit-Regular.otf");
+  src: url("https://static.tildacdn.com/tild6161-3661-4366-b132-366233303862/Magnit-Regular.woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Magnit";
-  src: url("/fonts/Magnit-Bold.otf");
+  src: url("https://static.tildacdn.com/tild3836-3034-4566-a461-373938303631/Magnit-Bold.woff");
   font-weight: 700;
   font-style: bold;
 }
 
 @font-face {
   font-family: "RF Dewi";
-  src: url("/fonts/RF-Dewi-Extended-Bold.otf");
+  src: url("https://static.tildacdn.com/tild3434-3033-4334-b865-656133623339/RF-Dewi-Extended-Bol.woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -188,7 +188,7 @@ a {
   align-items: center;
   gap: 14px;
   font-size: 18px;
-  color: var(--grayDark);
+  color: var(--grayDark) !important;
   font-family: 'Magnit', sans-serif;
   @media (max-width: 479px) {
     font-size: 14px;
@@ -254,8 +254,8 @@ a {
       font-size: 10px;
     }
     a {
-      text-decoration: underline;
-      color: var(--black);
+      text-decoration: underline !important;
+      color: var(--black) !important;
     }
   }
 }
@@ -567,7 +567,7 @@ a {
 }
 .text_email {
   font-size: 30px;
-  color: var(--black);
+  color: var(--black) !important;
 }
 .text_center {
   text-align: center;
@@ -665,6 +665,9 @@ a {
 .half_padding_top {
   padding-top: 40px;
 }
+#first_section{
+  padding-top: 72px;
+}
 .half_image {
   width: 600px;
   height: 600px;
@@ -751,8 +754,8 @@ a {
 .form_legal {
   font-size: 12px;
   a {
-    color: var(--brand);
-    text-decoration: underline;
+    color: var(--brand) !important;
+    text-decoration: underline !important;
   }
 }
 .point {
@@ -770,8 +773,8 @@ a {
   }
   a{
     font-family: 'RF Dewi', sans-serif;
-    color: var(--black);
-    text-decoration: underline;
+    color: var(--black) !important;
+    text-decoration: underline !important;
   }
 }
 .card {
@@ -821,7 +824,7 @@ a {
     p,
     h2,
     a {
-      color: var(--white);
+      color: var(--white) !important;
     }
     .default {
       display: none;

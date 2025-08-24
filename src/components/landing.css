@@ -372,8 +372,8 @@ h2.landing_gifki_2_header {
   a {
     font-family: "RF Dewi", sans-serif;
     font-size: 45px;
-    text-decoration: underline;
-    color: inherit;
+    text-decoration: underline !important;
+    color: inherit !important;
   }
 }
 
